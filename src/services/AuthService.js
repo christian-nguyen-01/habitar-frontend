@@ -1,11 +1,10 @@
-AuthService.js 
 import decode from 'jwt-decode'
-​
-export default class AuthService {
+
+class AuthService {
 	constructor(domain) {
 		this.domain = domain || 'http://localhost:3000'
 	}
-​
+
 	login = (user) => {
 		console.log({user: user});
 		// console.log("Starting Login Request", email, password);
@@ -18,7 +17,7 @@ export default class AuthService {
 			return res
 		})
 	}
-​
+
 	register = (user) => {
 		return this.authFetch(`${this.domain}/users`, {
 			method: "POST",
@@ -26,12 +25,12 @@ export default class AuthService {
 		})
 		.then(res => res)
 	}
-​
+
 	loggedIn() {
 		const token = this.getToken()
 		return !!token && !this.isTokenExpired(token)
 	}
-​
+
 	isTokenExpired(token) {
 		try {
 			const decoded = decode(token)
@@ -45,38 +44,38 @@ export default class AuthService {
 			return false;
 		}
 	}
-​
+
 	// The token is stored in the browser
 	setToken(idToken) {
 		return localStorage.setItem('id_token', idToken)
 	}
-​
+
 	// Fetch the token from local storage
 	getToken() {
 		return localStorage.getItem('id_token')
 	}
-​
+
 	// Removes the token
 	logout() {
 		return localStorage.removeItem('id_token')
-​
+
 	}
-​
+
 	getUserId = () => {
 		const token = decode(this.getToken());
 		return token.sub
 	}
-​
+
 	authFetch = (url, options) => {
 		const headers = {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		}
-​
+
 		if (this.loggedIn()) {
 			headers['Authorization'] = 'Bearer ' + this.getToken()
 		}
-​
+
 		return fetch(url, {
 			headers,
 			...options
@@ -93,7 +92,7 @@ export default class AuthService {
 			return err
 		})
 	}
-​
+
 	_checkStatus(response) {
 		if(response.status >= 200 && response.status < 300) {
 			console.log(":::SUCCESS:::");
@@ -103,3 +102,5 @@ export default class AuthService {
 		return response
 	}
 }
+
+export default AuthService

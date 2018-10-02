@@ -6083,8 +6083,8 @@ postcss-custom-media@^7.0.4:
     postcss "^7.0.2"
 
 postcss-custom-properties@^8.0.5:
-  version "8.0.7"
-  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.7.tgz#58998c5d958faf4cf64eb7d2f7fc9b318a4ae44b"
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.8.tgz#1812e2553805e1affce93164dd1709ef6b69c53e"
   dependencies:
     postcss "^7.0.5"
     postcss-values-parser "^2.0.0"
