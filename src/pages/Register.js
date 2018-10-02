@@ -20,7 +20,7 @@ class Register extends Component {
 
     render() {
 
-        let { first_name, last_name, email, password } = this.state.form.user
+        let { email, password } = this.state.form.user
 
         return (
             <div>
@@ -77,6 +77,7 @@ class Register extends Component {
 		})
 		.then(json => {
 			console.log("redirect");
+            console.log(json);
 			this.setState({
 				registerSuccess: true
 			})

@@ -82,8 +82,11 @@ class AuthService {
 		})
 		.then(this._checkStatus)
 		.then(response => {
+            console.log(response);
 			let token = response.headers.get('Authorization')
+            console.log(token);
 			let parsed = token.split(' ')[1]
+            console.log(parsed);
 			this.setToken(parsed)
 			return response.json()
 		})
