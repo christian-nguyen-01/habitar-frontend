@@ -5,6 +5,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 
 class App extends Component {
     render() {
@@ -19,6 +20,7 @@ class App extends Component {
                             <Route exact path = "/" component = { Landing } />
                             <Route path = "/register" component = { Register } />
                             <Route path = "/login" component = {Login} />
+                            <Route path = "/dashboard" component= {Dashboard} />
                         </Switch>
                     </div>
                 </Router>
