@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AuthService from '../services/AuthService'
+import AuthService from './AuthService'
 
 
 export default function withAuth(WrappedComponent) {
@@ -14,7 +14,7 @@ export default function withAuth(WrappedComponent) {
 
     componentWillMount() {
       if (!Auth.loggedIn()) {
-        this.props.history.replace('/login')
+        this.props.history.replace('/')
       }
       else {
         try {
@@ -26,7 +26,7 @@ export default function withAuth(WrappedComponent) {
         catch(err){
           console.log(err);
           Auth.logout()
-          this.props.history.replace('/login')
+          this.props.history.replace('/')
         }
       }
     }
