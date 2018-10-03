@@ -11,7 +11,7 @@ class Login extends Component {
 			loginSuccess: false,
 			errors: "",
 			user: {
-				email: "",
+				email: "e@me.com",
 				password: ""
 			}
 		}
@@ -53,11 +53,12 @@ class Login extends Component {
       <div className="center">
         <div className="card">
           <h1>Login</h1>
-          <form onSubmit = {this.onSubmit}>
+          <form onSubmit = {this.onSubmit} className="loginForm">
             <input
               className="form-item"
               placeholder="Email"
               name="email"
+              id="email"
               type="text"
               onChange={this.onChange.bind(this)}
               value={email}
@@ -66,6 +67,7 @@ class Login extends Component {
               className="form-item"
               placeholder="Password"
               name="password"
+              id="password"
               type="password"
               onChange={this.onChange.bind(this)}
               value={password}
@@ -75,6 +77,7 @@ class Login extends Component {
               onSubmit={this.onSubmit}
               value="SUBMIT"
               type="submit"
+              id="submit"
             />
           </form>
           {this.state.loginSuccess && <Redirect to="/dashboard" />}

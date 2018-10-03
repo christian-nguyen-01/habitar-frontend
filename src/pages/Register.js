@@ -27,21 +27,23 @@ class Register extends Component {
             <div>
 		        <div>
 					<h1>Register</h1>
-					<form onSubmit={this.onSubmit}>
+					<form onSubmit={this.onSubmit} className="registerForm">
 
-						<label id="email">Email</label>
+						<label>Email</label>
 						<input className="form-item"
 							type="email"
 							name="email"
+              id="email"
 							value={email}
 							onChange={this.onChange}
 						/>
 						{this.state.errors.email && <div>Error: Email  {this.state.errors.email[0]}</div>}
 
-						<label id="password">Password</label>
+						<label >Password</label>
 						<input className="form-item"
 							type="password"
 							name="password"
+              id="password"
 							value={password}
 							onChange={this.onChange}
 						/>
