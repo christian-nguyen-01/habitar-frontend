@@ -12,19 +12,24 @@ class Dashboard extends Component{
     }
     componentDidMount(){
         let auth = new AuthService()
-        let id=auth.getUserId()
+        let id = auth.getUserId()
+        console.log(id);
         getUser(id)
         .then(APIuser=>{
+            console.log(APIuser)
             this.setState({
-                user:APIuser
+                user: APIuser
             })
         })
     }
+
     render() {
+
         console.log(this.state.user);
+
         return(
             <div>
-                Hello {this.state.user.email}
+                This dashboard is protected for {this.state.user.email}
             </div>
         )
     }
