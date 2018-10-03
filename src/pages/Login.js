@@ -11,7 +11,7 @@ class Login extends Component {
 			loginSuccess: false,
 			errors: "",
 			user: {
-				email: "e@me.com",
+				email: "",
 				password: ""
 			}
 		}
