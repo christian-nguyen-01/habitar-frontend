@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 
 class App extends Component {
+
     render() {
 
         const history = createBrowserHistory()
@@ -27,6 +28,7 @@ class App extends Component {
             </div>
         );
     }
+
 }
 
 export default App;
