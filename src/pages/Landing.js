@@ -6,7 +6,7 @@ class Landing extends Component {
             <div>
                 <h1>HABITAR</h1>
                 <p>Hatching Good Habits</p><br/>
-                <a href="#">Register</a> | <a href="#">Login</a>
+                <a href="/register">Register</a> | <a href="/login">Login</a>
             </div>
         );
     }

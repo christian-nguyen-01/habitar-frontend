@@ -13,14 +13,26 @@ class Header extends Component {
 
     handleLogout = () => { // <- Remove local storage, and redirect the user
         this.auth.logout()
+        this.history.replace('/login')
     }
 
     render() {
+
         // check if the user is logged in or not
         if(this.auth.loggedIn()){
-            return ( <a href="/"><button className="login-or-out" onClick={this.handleLogout}> Logout </button></a> )
+            return (
+                <div>
+                    <a href="/"><button className="home"> Home </button></a>
+                    <a href="/"><button className="login-or-out" onClick={this.handleLogout}> Logout </button></a>
+                </div>
+            )
         } else {
-            return( <a href="/login"><button className="login-or-out"> Login </button></a>)
+            return(
+                <div>
+                    <a href="/"><button className="home"> Home </button></a>
+                    <a href="/login"><button className="login-or-out"> Login </button></a>
+                </div>
+            )
         }
     }
 }

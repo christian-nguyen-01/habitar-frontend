@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import AuthService from '../services/AuthService'
 
 class Register extends Component {
@@ -48,7 +49,7 @@ class Register extends Component {
 
 						<button className="form-submit" id="submit" onSubmit={this.onSubmit}>Register</button>
 					</form>
-					{this.state.registerSuccess}
+					{this.state.registerSuccess && <Redirect to="/dashboard" />}
 				</div>
 	      </div>
         );
@@ -64,7 +65,7 @@ class Register extends Component {
 
 	onSubmit = (e) => {
 		e.preventDefault()
-
+        console.log(this.state.form);
 		this.auth.register(this.state.form)
 		.then(json => {
 			console.log("handling any errors");
