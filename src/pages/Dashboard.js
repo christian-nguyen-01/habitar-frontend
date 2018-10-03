@@ -11,12 +11,12 @@ class Dashboard extends Component{
         }
     }
     componentDidMount(){
+
         let auth = new AuthService()
         let id = auth.getUserId()
-        console.log(id);
+
         getUser(id)
         .then(APIuser=>{
-            console.log(APIuser)
             this.setState({
                 user: APIuser
             })
@@ -24,8 +24,6 @@ class Dashboard extends Component{
     }
 
     render() {
-
-        console.log(this.state.user);
 
         return(
             <div>
