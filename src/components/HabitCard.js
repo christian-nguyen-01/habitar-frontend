@@ -14,7 +14,7 @@ class HabitCard extends Component{
 
     return (
       <div>
-        <p>{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i class="fas fa-bolt"></i>{streak_count}</p>
+        <p>{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i className="fas fa-bolt"></i>{streak_count}</p>
       </div>
     )
   }

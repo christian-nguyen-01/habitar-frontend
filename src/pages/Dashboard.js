@@ -9,6 +9,7 @@ class Dashboard extends Component{
         super(props)
         this.state={
             user:[],
+            username:"",
             habits: []
         }
     }
@@ -17,32 +18,34 @@ class Dashboard extends Component{
         let id = auth.getUserId()
         console.log(id);
         getUser(id)
-        .then(APIuser=>{
-            // console.log(APIuser)
+        .then(user=>{
+            let username=user.email.split('@')[0]
+            console.log(username)
             this.setState({
-                user: APIuser
+                user: user,
+                username:username
             })
         })
-        getHabits(id)
+        .then((res)=>getHabits(id))
         .then(habits=>{
           console.log(habits)
           this.setState({
             habits:habits
           })
         })
+
     }
 
     render() {
-
-        console.log(this.state.user);
-        let {habits}=this.state
+        console.log(this.state.user)
+        let { habits, user, username } = this.state
         return(
             <div>
-                This dashboard is protected for {this.state.user.email}
+                Hello { username }
                 <div>
                   {habits.map(habit =>{
                     return(
-                      <HabitCard habit={habit} />
+                      <HabitCard habit={habit} key={habit.id} />
                     )
                   })}
                 </div>
