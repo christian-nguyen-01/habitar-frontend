@@ -18,3 +18,6 @@
 //     ReactDOM.unmountComponentAtNode(div);
 //   })
 // })
+
+
+// add the test from https://airbnb.io/enzyme/docs/api/ReactWrapper/children.html
