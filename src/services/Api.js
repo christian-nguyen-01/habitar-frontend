@@ -8,6 +8,14 @@ let getUser = function(id){
     })
 }
 
+let getHabits = function(userId){
+  return fetch(BASE + '/users/' + userId + '/habits')
+  .then((res) =>{
+    let json=res.json()
+    return json
+  })
+}
+
 export {
-    getUser
+    getUser, getHabits
 }
