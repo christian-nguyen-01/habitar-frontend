@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import AuthService from '../services/AuthService'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { Redirect } from 'react-router-dom'
+import {
+    Navbar,
+    Nav,
+    NavItem,
+    NavDropdown,
+    MenuItem
+  } from 'react-bootstrap';
+
 
 
 class Header extends Component {
@@ -18,19 +26,65 @@ class Header extends Component {
 
     render() {
 
+        let burger = <i class="fas fa-bars"></i>
+
         // check if the user is logged in or not
         if(this.auth.loggedIn()){
             return (
                 <div>
-                    <a href="/"><button className="home"> Home </button></a>
-                    <a href="/"><button className="login-or-out" onClick={this.handleLogout}> Logout </button></a>
+                    <Navbar inverse collapseOnSelect>
+                      <Navbar.Header>
+                        <Navbar.Brand>
+                          <a href="/">Habitar logo</a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle />
+                      </Navbar.Header>
+                      <Navbar.Collapse>
+                        <Nav pullRight>
+
+                              <NavDropdown eventKey={1} title={burger} id="basic-nav-dropdown" className="home">
+
+                            <MenuItem eventKey={1.1} href="/">
+                                Home
+                            </MenuItem>
+
+                            <MenuItem eventKey={1.2} href="/" onClick={this.handleLogout} className="login-or-out">
+                                Logout
+                            </MenuItem>
+
+                          </NavDropdown>
+                        </Nav>
+                      </Navbar.Collapse>
+                    </Navbar>
                 </div>
             )
         } else {
             return(
                 <div>
-                    <a href="/"><button className="home"> Home </button></a>
-                    <a href="/login"><button className="login-or-out"> Login </button></a>
+                    <Navbar inverse collapseOnSelect>
+                      <Navbar.Header>
+                        <Navbar.Brand>
+                          <a href="/">Habitar logo</a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle />
+                      </Navbar.Header>
+                      <Navbar.Collapse>
+                        <Nav pullRight>
+
+
+                          <NavDropdown eventKey={1} title={burger} id="basic-nav-dropdown">
+                            <MenuItem eventKey={1.1} href="/">
+                                Home
+                            </MenuItem>
+                            <MenuItem eventKey={1.2} href="/login">
+                                Login
+                            </MenuItem>
+                          </NavDropdown>
+
+                        </Nav>
+                      </Navbar.Collapse>
+                    </Navbar>
+
                 </div>
             )
         }
