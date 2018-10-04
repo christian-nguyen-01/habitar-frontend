@@ -37,7 +37,7 @@ class Dashboard extends Component{
     }
 
     render() {
-        console.log(this.state.user)
+
         let { habits, user, username } = this.state
         return(
             <div>
