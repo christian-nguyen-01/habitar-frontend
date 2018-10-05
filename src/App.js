@@ -7,6 +7,8 @@ import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import Contact from './pages/Contact'
+import About from './pages/About'
 
 class App extends Component {
 
@@ -19,12 +21,14 @@ class App extends Component {
             <div>
                 <Router history = { history }>
                     <div>
-                    <Header />
+                        <Header />
                         <Switch>
                             <Route exact path = "/" component = { Landing } />
-                            <Route path = "/register" component = { Register } />
+                            <Route path = "/register" component = { Register} />
                             <Route path = "/login" component = {Login} />
                             <Route path = "/dashboard" component= {Dashboard} />
+                            <Route path = "/Contact" component= {Contact} />
+                            <Route path = "/About" component= {About} />
                         </Switch>
                     </div>
                 </Router>
