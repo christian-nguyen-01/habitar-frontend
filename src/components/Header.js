@@ -37,8 +37,11 @@ class Header extends Component {
             login = <Navbar.Text><Navbar.Link className = "login" href="/login">
                 Login
             </Navbar.Link></Navbar.Text>
-
-        } return (
+        }
+        let register
+        if(this.auth.loggedIn())register=""
+        else register = <Navbar.Text><Navbar.Link className = "register" href="/register"  >Register</Navbar.Link></Navbar.Text>
+        return (
             <div>
                 <Navbar inverse collapseOnSelect>
                   <Navbar.Header>
@@ -48,8 +51,14 @@ class Header extends Component {
                     <Navbar.Toggle />
                   </Navbar.Header>
                   <Navbar.Collapse className = "burger">
-                        <Navbar.Text><Navbar.Link href="/"  >Home</Navbar.Link></Navbar.Text>
+                        <Navbar.Text><Navbar.Link href="/" className = "home" >Home</Navbar.Link></Navbar.Text>
+
+                        <Navbar.Text><Navbar.Link href="/" className = "contactUs" >Contact Us</Navbar.Link></Navbar.Text>
+
+                        <Navbar.Text><Navbar.Link href="/" className = "about" >About</Navbar.Link></Navbar.Text>
+
                         {login}
+                        {register}
                   </Navbar.Collapse>
                 </Navbar>
             </div>

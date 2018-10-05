@@ -25,4 +25,16 @@ describe('login rendering', ()=>{
   it('renders a login button',()=>{
     expect(shallow(<Header/>).find('.login').exists()).toBe(true)
   })
+  it('renders a home button',()=>{
+    expect(shallow(<Header/>).find('.home').exists()).toBe(true)
+  })
+  it('renders a Contact Us button',()=>{
+    expect(shallow(<Header/>).find('.contactUs').exists()).toBe(true)
+  })
+  it('renders an About button',()=>{
+    expect(shallow(<Header/>).find('.about').exists()).toBe(true)
+  })
+  it('renders a register button',()=>{
+    expect(shallow(<Header/>).find('.register').exists()).toBe(true)
+  })
 })
