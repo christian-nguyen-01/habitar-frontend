@@ -30,13 +30,13 @@ class Header extends Component {
         let login
         // check if the user is logged in or not
         if(this.auth.loggedIn()){
-            login = <MenuItem eventKey={1.2} href="/" onClick={this.handleLogout} className="logout">
+            login = <Navbar.Text><Navbar.Link href="/" onClick={this.handleLogout} className="logout">
                 Logout
-            </MenuItem>
+            </Navbar.Link></Navbar.Text>
         } else {
-            login = <MenuItem eventKey={1.2} className = "login" href="/login">
+            login = <Navbar.Text><Navbar.Link className = "login" href="/login">
                 Login
-            </MenuItem>
+            </Navbar.Link></Navbar.Text>
 
         } return (
             <div>
@@ -47,19 +47,9 @@ class Header extends Component {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                   </Navbar.Header>
-                  <Navbar.Collapse>
-                    <Nav pullRight>
-
-                          <NavDropdown eventKey={1} title={burger} id="basic-nav-dropdown" noCaret className="burger">
-
-                        <MenuItem eventKey={1.1} href="/">
-                            Home
-                        </MenuItem>
-
+                  <Navbar.Collapse className = "burger">
+                        <Navbar.Text><Navbar.Link href="/"  >Home</Navbar.Link></Navbar.Text>
                         {login}
-
-                      </NavDropdown>
-                    </Nav>
                   </Navbar.Collapse>
                 </Navbar>
             </div>
