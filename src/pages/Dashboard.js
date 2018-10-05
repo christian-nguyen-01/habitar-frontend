@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {getUser, getHabits} from '../services/Api'
@@ -37,8 +38,10 @@ class Dashboard extends Component{
 
     }
 
+
     render() {
-        console.log(this.state.user)
+        let auth = new AuthService()
+        let id = auth.getUserId()
         let { habits, user, username } = this.state
         return(
             <div>
@@ -49,6 +52,9 @@ class Dashboard extends Component{
                       <HabitCard habit={habit} key={habit.id} />
                     )
                   })}
+                </div>
+                <div>
+                  <Link to= {`/users/${id}/habits/`}>Create New Habit</Link>
                 </div>
             </div>
 
