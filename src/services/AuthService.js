@@ -82,9 +82,11 @@ class AuthService {
 		})
 		.then(this._checkStatus)
 		.then(response => {
-            console.log(response);
+            console.log("HEADERS::: " + headers);
+            console.log("OPTIONS::: " + options);
+            console.log("response: ", response);
 			let token = response.headers.get('Authorization')
-            console.log(token);
+            console.log("token:", token);
 			let parsed = token.split(' ')[1]
             console.log(parsed);
 			this.setToken(parsed)
@@ -98,7 +100,7 @@ class AuthService {
 
 	_checkStatus(response) {
 		if(response.status >= 200 && response.status < 300) {
-			console.log(":::SUCCESS:::");
+			console.log(":::SUCCESS:::", response);
 		} else {
 			console.log(":::ERROR:::", response)
 		}

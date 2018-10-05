@@ -14,9 +14,10 @@ class Dashboard extends Component{
         }
     }
     componentDidMount(){
+
         let auth = new AuthService()
         let id = auth.getUserId()
-        console.log(id);
+
         getUser(id)
         .then(user=>{
             let username=user.email.split('@')[0]

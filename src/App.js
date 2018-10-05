@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 
+import Header from './components/Header'
 import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
@@ -12,11 +13,13 @@ class App extends Component {
     render() {
 
         const history = createBrowserHistory()
+        console.log(history);
 
         return (
             <div>
                 <Router history = { history }>
                     <div>
+                    <Header />
                         <Switch>
                             <Route exact path = "/" component = { Landing } />
                             <Route path = "/register" component = { Register } />
