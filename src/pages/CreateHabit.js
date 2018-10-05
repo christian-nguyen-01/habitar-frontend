@@ -36,6 +36,13 @@ class CreateHabit extends Component {
     console.log(this.state.form);
     event.preventDefault()
     postHabit(this.state.form)
+    .then(() => {
+      this.setState({
+        success: true
+      })
+      console.log(this.state.success);
+    })
+
   }
 
   componentDidMount(){
@@ -64,7 +71,7 @@ class CreateHabit extends Component {
 
         </form>
 
-        {this.props.success &&
+        {this.state.success &&
           <Redirect to="/dashboard" />
         }
 
