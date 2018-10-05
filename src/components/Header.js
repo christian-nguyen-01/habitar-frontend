@@ -26,69 +26,46 @@ class Header extends Component {
 
     render() {
 
-        let burger = <i class="fas fa-bars"></i>
-
+        let burger = <i className="fas fa-bars"></i>
+        let login
         // check if the user is logged in or not
         if(this.auth.loggedIn()){
-            return (
-                <div>
-                    <Navbar inverse collapseOnSelect>
-                      <Navbar.Header>
-                        <Navbar.Brand>
-                          <a href="/">Habitar logo</a>
-                        </Navbar.Brand>
-                        <Navbar.Toggle />
-                      </Navbar.Header>
-                      <Navbar.Collapse>
-                        <Nav pullRight>
-
-                              <NavDropdown eventKey={1} title={burger} id="basic-nav-dropdown" className="home">
-
-                            <MenuItem eventKey={1.1} href="/">
-                                Home
-                            </MenuItem>
-
-                            <MenuItem eventKey={1.2} href="/" onClick={this.handleLogout} className="login-or-out">
-                                Logout
-                            </MenuItem>
-
-                          </NavDropdown>
-                        </Nav>
-                      </Navbar.Collapse>
-                    </Navbar>
-                </div>
-            )
+            login = <MenuItem eventKey={1.2} href="/" onClick={this.handleLogout} className="logout">
+                Logout
+            </MenuItem>
         } else {
-            return(
-                <div>
-                    <Navbar inverse collapseOnSelect>
-                      <Navbar.Header>
-                        <Navbar.Brand>
-                          <a href="/">Habitar logo</a>
-                        </Navbar.Brand>
-                        <Navbar.Toggle />
-                      </Navbar.Header>
-                      <Navbar.Collapse>
-                        <Nav pullRight>
+            login = <MenuItem eventKey={1.2} className = "login" href="/login">
+                Login
+            </MenuItem>
 
+        } return (
+            <div>
+                <Navbar inverse collapseOnSelect>
+                  <Navbar.Header>
+                    <Navbar.Brand>
+                      <a href="/" id="smallLogo">Habitar logo</a>
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                  </Navbar.Header>
+                  <Navbar.Collapse>
+                    <Nav pullRight>
 
-                          <NavDropdown eventKey={1} title={burger} id="basic-nav-dropdown">
-                            <MenuItem eventKey={1.1} href="/">
-                                Home
-                            </MenuItem>
-                            <MenuItem eventKey={1.2} href="/login">
-                                Login
-                            </MenuItem>
-                          </NavDropdown>
+                          <NavDropdown eventKey={1} title={burger} id="basic-nav-dropdown" noCaret className="burger">
 
-                        </Nav>
-                      </Navbar.Collapse>
-                    </Navbar>
+                        <MenuItem eventKey={1.1} href="/">
+                            Home
+                        </MenuItem>
 
-                </div>
-            )
-        }
+                        {login}
+
+                      </NavDropdown>
+                    </Nav>
+                  </Navbar.Collapse>
+                </Navbar>
+            </div>
+        )
     }
 }
+
 
 export default Header;
