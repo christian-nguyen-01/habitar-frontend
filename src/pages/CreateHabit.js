@@ -12,13 +12,13 @@ class CreateHabit extends Component {
       form: {
         habit: {
           user_id: this.props.userId,
-          habit_name: "something habit",
-          child: "something child",
+          habit_name: "",
+          child: "",
           streak_count: 0,
           habitar: 0,
-          reward: "something cool",
+          reward: "",
           completed: false,
-          habit_description: "something something",
+          habit_description: "",
           reminder_time: "2000-01-01T08:30:00.000Z"
         }
       },
@@ -59,11 +59,11 @@ class CreateHabit extends Component {
     return(
 
       <div>
-        <form onSubmit={this.onSubmit}>
-          <input id="child" type="text" name="child" value={child} onChange={this.handleChange} />
-          <input id="habit_name" type="text" name="habit_name" value={habit_name} onChange={this.handleChange} />
-          <input id="habit_description" type="text" name="habit_description" value={habit_description} onChange={this.handleChange} />
-          <input id="reward" type="text" name="reward" value={reward} onChange={this.handleChange} />
+        <form onSubmit={this.onSubmit} className="createForm">
+          <input id="child" type="text" name="child" value={child} placeholder="Child" onChange={this.handleChange} />
+          <input id="habit_name" type="text" name="habit_name" placeholder="Habit" value={habit_name} onChange={this.handleChange} />
+          <input id="habit_description" type="text" name="habit_description" placeholder="Habit Description" value={habit_description} onChange={this.handleChange} />
+          <input id="reward" type="text" name="reward" value={reward} placeholder="Reward" onChange={this.handleChange} />
           <input id="habitar" type="text" name="habitar" value={habitar} onChange={this.handleChange} />
           <input id="reminder_time" type="text" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
 

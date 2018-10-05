@@ -39,7 +39,7 @@ let editHabit = function(userId, habit, habitId) {
 }
 
 let postHabit = function(habit) {
-
+    console.log(JSON.stringify(habit))
   let address = BASE +'/users/'+ habit.habit.user_id+'/habits.json'
   return fetch(address, {
     method: 'POST',
