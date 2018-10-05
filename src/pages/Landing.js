@@ -4,7 +4,9 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                This is the landing page.
+                <h1>HABITAR</h1>
+                <p>Hatching Good Habits</p><br/>
+                <a href="/register">Register</a> | <a href="/login">Login</a>
             </div>
         );
     }
