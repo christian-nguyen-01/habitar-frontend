@@ -27,7 +27,6 @@ class Login extends Component {
 
   onSubmit = (e) => {
 		e.preventDefault()
-
 		this.auth.login(this.state.user)
 		.then(json => {
 			console.log("handling any errors");

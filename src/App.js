@@ -6,6 +6,7 @@ import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import CreateHabit from './pages/CreateHabit'
 
 class App extends Component {
 
@@ -21,7 +22,8 @@ class App extends Component {
                             <Route exact path = "/" component = { Landing } />
                             <Route path = "/register" component = { Register } />
                             <Route path = "/login" component = {Login} />
-                            <Route path = "/dashboard" component= {Dashboard} />
+                            <Route path = "/dashboard" component = {Dashboard} />
+                            <Route path = "/users/:user_id/habits" component = {CreateHabit} />
                         </Switch>
                     </div>
                 </Router>
