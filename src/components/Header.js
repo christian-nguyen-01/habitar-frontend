@@ -51,14 +51,14 @@ class Header extends Component {
                     <Navbar.Toggle />
                   </Navbar.Header>
                   <Navbar.Collapse className = "burger">
+                      {login}
+                      {register}
                         <Navbar.Text><Navbar.Link href="/" className = "home" >Home</Navbar.Link></Navbar.Text>
 
-                        <Navbar.Text><Navbar.Link href="/" className = "contactUs" >Contact Us</Navbar.Link></Navbar.Text>
 
-                        <Navbar.Text><Navbar.Link href="/" className = "about" >About</Navbar.Link></Navbar.Text>
+                        <Navbar.Text><Navbar.Link href="/about" className = "about" >About</Navbar.Link></Navbar.Text>
 
-                        {login}
-                        {register}
+                        <Navbar.Text><Navbar.Link href="/contact" className = "contactUs" >Contact Us</Navbar.Link></Navbar.Text>
                   </Navbar.Collapse>
                 </Navbar>
             </div>
