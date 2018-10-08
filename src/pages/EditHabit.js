@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
-import {postHabit} from '../services/Api'
+import {editHabit, getHabit} from '../services/Api'
 import HabitCard from '../components/HabitCard'
 import {Redirect} from 'react-router-dom'
 
@@ -33,9 +33,10 @@ class CreateHabit extends Component {
   }
 
   onSubmit=(event)=>{
+    let {user_id, id} = this.props.props.params
     console.log(this.state.form);
     event.preventDefault()
-    postHabit(this.state.form)
+    editHabit(user_id, id, this.state.form)
     .then(() => {
       this.setState({
         success: true
@@ -46,16 +47,22 @@ class CreateHabit extends Component {
   }
 
   componentDidMount(){
-    let auth=new AuthService()
-    let user_id=auth.getUserId()
-    console.log(user_id)
-    console.log(this.props.props.user_id)
-    // console.log(this.props.match.params);
-    this.setState({user_id:user_id})
+    let {user_id, id} = this.props.props.params
+    console.log(user_id,id);
+    getHabit(user_id,id)
+    .then((res)=>{
+        let {habit}=this.state.form
+        console.log(res.child);
+        Object.keys(habit).map((e)=>habit[e]=res[e])
+        console.log(habit);
+        // console.log(child);
+        this.setState({habit})
+        // this.setState({form.habit.child: child} )
+        console.log(this.state.form.habit);
+    })
   }
 
   render(){
-
     let { habit_name, child, streak_count, habitar, reward, habit_description, reminder_time } = this.state.form.habit
 
     return(

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import HabitCard from '../HabitCard'
-import Enzyme, {mount} from 'enzyme'
+import Enzyme, { mount,shallow,render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -18,5 +18,13 @@ describe('HabitCard rendering',()=>{
   it('renders the contents', ()=>{
     const wrapper = mount(<HabitCard habit={testobject}/>)
     expect(wrapper.find('.habitCard')).toBeTruthy() //// TODO: get the actual contents of the card
+  })
+  it('renders the edit link to EditHabit component',()=>{
+      const wrapper = mount(<HabitCard habit={testobject}/>)
+    expect(wrapper.find('.edit').exists()).toBe(true)
+  })
+  it('renders the delete link',()=>{
+      const wrapper = mount(<HabitCard habit={testobject}/>)
+    expect(wrapper.find('.delete').exists()).toBe(true)
   })
 })

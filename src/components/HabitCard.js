@@ -1,7 +1,13 @@
 import React, {Component} from 'react'
-
+import {deleteHabit} from '../services/Api'
 class HabitCard extends Component{
+delete = (e)=>{
+    e.preventDefault()
+    console.log(this.props.habit)
+    deleteHabit(this.props.habit.user_id,this.props.habit.id)
+    window.location.reload()
 
+}
   render() {
 
     let { habit } = this.props
@@ -11,10 +17,11 @@ class HabitCard extends Component{
     let timeSplit = time.split(":")
 
     timeSplit[0] >= 12 ? time = `${timeSplit[0] - 12}:${timeSplit[1]} PM` : time = `${timeSplit[0]}:${timeSplit[1]} AM`
-
     return (
       <div>
         <p className="habitCard">{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i className="fas fa-bolt"></i>{streak_count}</p>
+        <a className = 'edit' href= {'/users/'+habit.user_id+'/habits/'+habit.id}>Edit</a>
+        <p className = 'delete' onClick={this.delete}> Delete </p>
       </div>
     )
   }
