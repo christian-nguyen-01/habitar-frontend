@@ -22,9 +22,13 @@ let getHabit = function(userId, habitId) {
     let json = res.json()
     return json
   })
+  .then((res)=>{
+    console.log(res)
+    return res
+    })
 }
 
-let editHabit = function(userId, habit, habitId) {
+let editHabit = function(userId, habitId, habit) {
   return fetch(BASE + '/users/' + userId + '/habits/' + habitId, {
     headers: {
       'Content-Type': 'application/json'
@@ -39,7 +43,6 @@ let editHabit = function(userId, habit, habitId) {
 }
 
 let postHabit = function(habit) {
-    console.log(JSON.stringify(habit))
   let address = BASE +'/users/'+ habit.habit.user_id+'/habits.json'
   return fetch(address, {
     method: 'POST',
@@ -54,6 +57,14 @@ let postHabit = function(habit) {
   })
 }
 
+let deleteHabit = function(userId, habitId){
+    let address= BASE + '/users/' + userId + '/habits/' + habitId
+    return fetch(address,{
+        method: "DELETE"
+    })
+}
+
+
 export {
-    getUser, getHabits, postHabit
+    getUser, getHabits, postHabit,getHabit, editHabit, deleteHabit
 }

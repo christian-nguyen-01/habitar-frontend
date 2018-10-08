@@ -10,13 +10,14 @@ import Dashboard from './pages/Dashboard'
 import CreateHabit from './pages/CreateHabit'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import EditHabit from './pages/EditHabit'
 
 class App extends Component {
 
     render() {
 
         const history = createBrowserHistory()
-        console.log(history);
+        // console.log(history);
 
         return (
             <div>
@@ -28,7 +29,8 @@ class App extends Component {
                             <Route path = "/register" component = { Register} />
                             <Route path = "/login" component = {Login} />
                             <Route path = "/dashboard" component = {Dashboard} />
-                            <Route path = "/users/:user_id/habits" component = {CreateHabit} />
+                            <Route exact path = "/users/:user_id/habits" render={ ({match}) => <CreateHabit user_id={match.params.user_id}/> }/>
+                            <Route exact path = "/users/:user_id/habits/:id" render = {({match}) => <EditHabit params={match.params} />} />
                             <Route path = "/Contact" component= {Contact} />
                             <Route path = "/About" component= {About} />
 
