@@ -67,7 +67,7 @@ class CreateHabit extends Component {
           <input id="habit_description" type="text" name="habit_description" placeholder="Habit Description" value={habit_description} onChange={this.handleChange} />
           <input id="reward" type="text" name="reward" value={reward} placeholder="Reward" onChange={this.handleChange} />
           <input id="habitar" type="text" name="habitar" value={habitar} onChange={this.handleChange} />
-          <input id="reminder_time" type="text" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
+          <input id="reminder_time" type="time" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
 
           <button type="submit" onClick={this.onSumbit}>Create Habit</button>
 

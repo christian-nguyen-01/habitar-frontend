@@ -46,7 +46,7 @@ class Header extends Component {
                 <Navbar inverse collapseOnSelect>
                   <Navbar.Header>
                     <Navbar.Brand>
-                      <a href="/" id="smallLogo">Habitar logo</a>
+                      <a href="/dashboard" id="smallLogo">Habitar logo</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                   </Navbar.Header>
