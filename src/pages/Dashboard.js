@@ -42,7 +42,7 @@ class Dashboard extends Component{
     render() {
         let auth = new AuthService()
         let id = auth.getUserId()
-        let { habits, user, username } = this.state
+        let { habits, username } = this.state
         return(
             <div>
                 Hello { username }

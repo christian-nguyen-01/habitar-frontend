@@ -19,8 +19,8 @@ delete = (e)=>{
     timeSplit[0] >= 12 ? time = `${timeSplit[0] - 12}:${timeSplit[1]} PM` : time = `${timeSplit[0]}:${timeSplit[1]} AM`
     return (
       <div>
-        <p className="habitCard">{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i className="fas fa-bolt"></i>{streak_count}</p>
-        <a className = 'edit' href= {'/users/'+habit.user_id+'/habits/'+habit.id}>Edit</a>
+        <a className="habitCard" href={'/users/'+habit.user_id+'/habits/'+habit.id}>{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i className="fas fa-bolt"></i>{streak_count}</a>
+        <a className = 'edit' href= {'/users/'+habit.user_id+'/habits/'+habit.id+'/edit'}>Edit</a>
         <p className = 'delete' onClick={this.delete}> Delete </p>
       </div>
     )

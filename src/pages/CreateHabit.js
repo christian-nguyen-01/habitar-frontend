@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {postHabit} from '../services/Api'
-import HabitCard from '../components/HabitCard'
 import {Redirect} from 'react-router-dom'
 
 class CreateHabit extends Component {
@@ -56,7 +55,7 @@ class CreateHabit extends Component {
 
   render(){
 
-    let { habit_name, child, streak_count, habitar, reward, habit_description, reminder_time } = this.state.form.habit
+    let { habit_name, child, habitar, reward, habit_description, reminder_time } = this.state.form.habit
 
     return(
 
@@ -67,7 +66,7 @@ class CreateHabit extends Component {
           <input id="habit_description" type="text" name="habit_description" placeholder="Habit Description" value={habit_description} onChange={this.handleChange} />
           <input id="reward" type="text" name="reward" value={reward} placeholder="Reward" onChange={this.handleChange} />
           <input id="habitar" type="text" name="habitar" value={habitar} onChange={this.handleChange} />
-          <input id="reminder_time" type="text" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
+          <input id="reminder_time" type="time" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
 
           <button type="submit" onClick={this.onSumbit}>Create Habit</button>
 
