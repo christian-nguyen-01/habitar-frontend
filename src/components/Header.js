@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import AuthService from '../services/AuthService'
-import createBrowserHistory from 'history/createBrowserHistory'
-import { Redirect } from 'react-router-dom'
+// import createBrowserHistory from 'history/createBrowserHistory'
+// import { Redirect } from 'react-router-dom'
 import {
-    Navbar,
-    Nav,
-    NavItem,
-    NavDropdown,
-    MenuItem
+    Navbar
+    // Nav,
+    // NavItem,
+    // NavDropdown,
+    // MenuItem
   } from 'react-bootstrap';
 
 
@@ -26,7 +26,7 @@ class Header extends Component {
 
     render() {
 
-        let burger = <i className="fas fa-bars"></i>
+        // let burger = <i className="fas fa-bars"></i>
         let login
         // check if the user is logged in or not
         if(this.auth.loggedIn()){

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {postHabit} from '../services/Api'
-import HabitCard from '../components/HabitCard'
 import {Redirect} from 'react-router-dom'
 
 class CreateHabit extends Component {
@@ -56,7 +55,7 @@ class CreateHabit extends Component {
 
   render(){
 
-    let { habit_name, child, streak_count, habitar, reward, habit_description, reminder_time } = this.state.form.habit
+    let { habit_name, child, habitar, reward, habit_description, reminder_time } = this.state.form.habit
 
     return(
 

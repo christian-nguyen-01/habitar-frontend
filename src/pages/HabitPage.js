@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import withAuth from '../services/withAuth'
-import AuthService from '../services/AuthService'
 import {editHabit, getHabit} from '../services/Api'
 import {Redirect} from 'react-router-dom'
 import egg from '../assets/egg.jpg'
@@ -29,7 +28,7 @@ class HabitPage extends Component {
         let habit=this.state.form.habit
         let {user_id,id} = this.props.props.params
         if(habit.streak_count<7) habit['streak_count']+=1
-        if (habit.streak_count>=7) habit['completed']=true
+        if(habit.streak_count>=7) habit['completed']=true
         this.setState({habit})
         editHabit(user_id,id,this.state.form)
     }
@@ -49,22 +48,24 @@ class HabitPage extends Component {
         })
     }
     render(){
-        let {habit_name, child, streak_count, habitar, reward, completed, habit_description} = this.state.form.habit
+        let {habit_name, child, streak_count, completed, habit_description} = this.state.form.habit
+        let {user_id, id} = this.props.props.params
         let streakCounter=[]
         for(let i=1;i<=7;i++){
-            if(i<=streak_count) streakCounter.push(<i style={{color:"green"}} className="fas fa-bolt"></i>)
+            if(i<=streak_count) streakCounter.push(<i style={{color:"gold"}} className="fas fa-bolt"></i>)
             else streakCounter.push(<i style={{color:'lightgrey'}} className="fas fa-bolt"></i>)
         }
+        let redirectPath='/users/'+user_id+'/habits/'+id+'/reward'
 
         return(
             <div className="HabitPage">
             <h1> {child}&rsquo;s Habitar</h1>
-            <img src={egg}></img>
+            <img src={egg} alt="Keep up your habit to hatch your habitar"></img>
             <h1> {habit_name}</h1>
             <p> {habit_description}</p>
             {streakCounter}
             <button onClick={this.addStreak}>click!</button>
-            {completed && <Redirect to="/dashboard"/>}
+            {completed && <Redirect to={redirectPath}/>}
             </div>
         )
     }

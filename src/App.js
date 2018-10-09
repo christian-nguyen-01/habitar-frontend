@@ -12,6 +12,7 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import EditHabit from './pages/EditHabit'
 import HabitPage from './pages/HabitPage'
+import RewardPage from './pages/RewardPage'
 
 class App extends Component {
 
@@ -35,6 +36,7 @@ class App extends Component {
                             <Route exact path = "/users/:user_id/habits/:id/edit" render = {({match}) => <EditHabit params={match.params} />} />
                             <Route path = "/Contact" component= {Contact} />
                             <Route path = "/About" component= {About} />
+                            <Route exact path = "/users/:user_id/habits/:id/reward" render = {({match}) => <RewardPage params={match.params} />} />
 
                         </Switch>
                     </div>
