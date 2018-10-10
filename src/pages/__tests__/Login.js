@@ -31,7 +31,7 @@ describe('login input',()=>{
   it('should respond to a change to the email field',()=>{
     const wrapper = mount(<Login/>)
     // expect(wrapper.state().user).toEqual({email: "e@me.com", password: ""})
-    expect(wrapper.state().user.email).toEqual("e@me.com")
+    expect(wrapper.state().user.email).toEqual(" ")
     wrapper.find('#email').simulate('change', {target: {name: 'email', value:'test@mail.com'}})
     expect(wrapper.state().user.email).toEqual("test@mail.com")
   })
