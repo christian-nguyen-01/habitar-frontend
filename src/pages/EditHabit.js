@@ -19,8 +19,8 @@ class CreateHabit extends Component {
           reward: "",
           completed: false,
           habit_description: "",
-          opt_in:false,
-          phone:0,
+          opt_in: false,
+          phone: 0,
           reminder_time: "2000-01-01T08:30:00.000Z"
         }
       },
@@ -83,7 +83,7 @@ class CreateHabit extends Component {
           <input id="habitar" type="text" name="habitar" value={habitar} onChange={this.handleChange} />
           <input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
           onClick={this.handleCheck} />
-          <input id="phone" type="number" name="phone" value={phone} onChange={this.handleChange} min="999999999" max="9999999999" />
+          <input id="phone" type="number" name="phone" value={phone} onChange={this.handleChange} />
           <input id="reminder_time" type="time" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
 
           <button type="submit" onClick={this.onSumbit}>Edit Habit</button>
