@@ -19,7 +19,7 @@ class CreateHabit extends Component {
           completed: false,
           habit_description: "",
           opt_in: false,
-          phone: 0,
+          phone: "",
           reminder_time: "2000-01-01T08:30:00.000Z"
         }
       },
