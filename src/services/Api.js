@@ -38,6 +38,7 @@ let editHabit = function(userId, habitId, habit) {
   })
   .then((res) => {
     let json = res.json()
+    console.log(json);
     return json
   })
 }
