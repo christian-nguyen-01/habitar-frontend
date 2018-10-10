@@ -18,6 +18,8 @@ class CreateHabit extends Component {
           reward: "",
           completed: false,
           habit_description: "",
+          opt_in:false,
+          phone:0,
           reminder_time: "2000-01-01T08:30:00.000Z"
         }
       },
@@ -28,6 +30,12 @@ class CreateHabit extends Component {
   handleChange=(event)=>{
     let {habit} = this.state.form
     habit[event.target.name] = event.target.value
+    this.setState({habit})
+  }
+
+  handleCheck=(e)=>{
+    let {habit} = this.state.form
+    habit['opt_in'] = e.target.checked
     this.setState({habit})
   }
 
@@ -55,7 +63,7 @@ class CreateHabit extends Component {
 
   render(){
 
-    let { habit_name, child, habitar, reward, habit_description, reminder_time } = this.state.form.habit
+    let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in,phone } = this.state.form.habit
 
     return(
 
@@ -66,6 +74,9 @@ class CreateHabit extends Component {
           <input id="habit_description" type="text" name="habit_description" placeholder="Habit Description" value={habit_description} onChange={this.handleChange} />
           <input id="reward" type="text" name="reward" value={reward} placeholder="Reward" onChange={this.handleChange} />
           <input id="habitar" type="text" name="habitar" value={habitar} onChange={this.handleChange} />
+          <input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
+          onClick={this.handleCheck} />
+          <input id="phone" type="number" name="phone" value={phone} onChange={this.handleChange} min="999999999" max="9999999999" />
           <input id="reminder_time" type="time" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
 
           <button type="submit" onClick={this.onSumbit}>Create Habit</button>
