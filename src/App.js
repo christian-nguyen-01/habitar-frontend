@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
-
 import Header from './components/Header'
-import Landing from './pages/Landing'
+import Footer from './components/Footer'
+import LandingPage from './pages/LandingPage'
+// import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
@@ -13,6 +14,7 @@ import About from './pages/About'
 import EditHabit from './pages/EditHabit'
 import HabitPage from './pages/HabitPage'
 import RewardPage from './pages/RewardPage'
+import { GlobalStyle } from './theme/globalStyle'
 
 class App extends Component {
 
@@ -25,20 +27,21 @@ class App extends Component {
             <div>
                 <Router history = { history }>
                     <div>
+						<GlobalStyle />
                         <Header />
                         <Switch>
-                            <Route exact path = "/" component = { Landing } />
+                            <Route exact path = "/" component = { LandingPage } />
                             <Route path = "/register" component = { Register} />
-                            <Route path = "/login" component = {Login} />
-                            <Route path = "/dashboard" component = {Dashboard} />
-                            <Route exact path = "/users/:user_id/habits" render={ ({match}) => <CreateHabit user_id={match.params.user_id}/> }/>
+                            <Route path = "/login" component = { Login } />
+                            <Route path = "/dashboard" component = { Dashboard } />
+                            <Route exact path = "/users/:user_id/habits" render = { ({match}) => <CreateHabit user_id={match.params.user_id}/> }/>
                             <Route exact path = "/users/:user_id/habits/:id" render = {({match}) => <HabitPage params={match.params} />} />
                             <Route exact path = "/users/:user_id/habits/:id/edit" render = {({match}) => <EditHabit params={match.params} />} />
-                            <Route path = "/Contact" component= {Contact} />
-                            <Route path = "/About" component= {About} />
+                            <Route path = "/Contact" component = { Contact } />
+                            <Route path = "/About" component = { About } />
                             <Route exact path = "/users/:user_id/habits/:id/reward" render = {({match}) => <RewardPage params={match.params} />} />
-
                         </Switch>
+						<Footer />
                     </div>
                 </Router>
             </div>

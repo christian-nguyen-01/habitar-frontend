@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import AuthService from '../services/AuthService'
+import {Bg} from '../theme/types'
 
 class Register extends Component {
 
@@ -24,7 +25,7 @@ class Register extends Component {
         let { email, password } = this.state.form.user
 
         return (
-            <div>
+            <Bg>
 		        <div>
 					<h1>Register</h1>
 					<form onSubmit={this.onSubmit} className="registerForm">
@@ -53,7 +54,7 @@ class Register extends Component {
 					</form>
 					{this.state.registerSuccess && <Redirect to="/dashboard" />}
 				</div>
-	      </div>
+	      </Bg>
         );
     }
 

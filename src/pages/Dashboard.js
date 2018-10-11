@@ -4,6 +4,7 @@ import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {getUser, getHabits} from '../services/Api'
 import HabitCard from '../components/HabitCard'
+import {Bg, A2} from '../theme/types'
 
 class Dashboard extends Component{
 
@@ -41,14 +42,14 @@ class Dashboard extends Component{
     }
 
     render() {
-		
+
         let auth = new AuthService()
         let id = auth.getUserId()
         let { habits, username } = this.state
 
         return(
-            <div>
-                Hello { username }
+            <Bg>
+                <h1>Hello { username }!</h1>
                 <div>
                   {habits.map(habit => {
                     return(
@@ -57,9 +58,9 @@ class Dashboard extends Component{
                   })}
                 </div>
                 <div>
-                  <Link to= {`/users/${id}/habits/`}>Create New Habit</Link>
+                  <A2 to= {`/users/${id}/habits/`}>CREATE NEW HABIT</A2>
                 </div>
-            </div>
+            </Bg>
         )
     }
 }

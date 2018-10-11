@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import {Bg} from '../theme/types'
 
 class Contact extends Component {
     render() {
         return (
-            <div>
+            <Bg>
                 <h1>Contact Us</h1>
                 <p>Delta 2018 Unicorns</p>
                 <br/>
@@ -11,7 +12,7 @@ class Contact extends Component {
                 <p>Danny</p>
                 <p>Christian</p>
                 <p>Jerome</p>
-            </div>
+            </Bg>
         );
     }
 }
