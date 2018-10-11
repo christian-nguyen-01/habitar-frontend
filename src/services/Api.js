@@ -23,7 +23,7 @@ let getHabit = function(userId, habitId) {
     return json
   })
   .then((res)=>{
-    console.log(res)
+    // console.log(res)
     return res
     })
 }

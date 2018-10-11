@@ -21,7 +21,7 @@ class CreateHabit extends Component {
           habit_description: "",
           opt_in: false,
           phone: 0,
-          reminder_time: "2000-01-01T08:30:00.000Z"
+          reminder_time: "12:00"
         }
       },
       success: false
@@ -36,7 +36,8 @@ class CreateHabit extends Component {
 
   handleCheck=(e)=>{
     let {habit} = this.state.form
-    habit['opt_in'] = e.target.checked
+    habit['opt_in'] = e.target.checked?true:false
+    console.log(e.target.checked);
     this.setState({habit})
   }
 
@@ -61,7 +62,11 @@ class CreateHabit extends Component {
     .then((res)=>{
         let {habit}=this.state.form
         Object.keys(habit).map((e)=>habit[e]=res[e])
-
+        var displaytime = new Date(habit.reminder_time)
+        console.log(habit.reminder_time,displaytime,displaytime.getHours(),displaytime.getMinutes());
+        let settime= `${(displaytime.getHours()>=10)?displaytime.getHours():("0"+displaytime.getHours())}:${(displaytime.getMinutes()>=10)?displaytime.getMinutes():("0"+displaytime.getMinutes())}`
+        console.log(settime);
+        habit['reminder_time']=settime
         // console.log(child);
         this.setState({habit})
         // this.setState({form.habit.child: child} )
@@ -71,7 +76,9 @@ class CreateHabit extends Component {
 
   render(){
     let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone } = this.state.form.habit
-
+    let opt= opt_in? <input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
+    onClick={this.handleCheck} checked/>:<input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
+    onClick={this.handleCheck} />
     return(
 
       <div>
@@ -81,8 +88,7 @@ class CreateHabit extends Component {
           <input id="habit_description" type="text" name="habit_description" placeholder="Habit Description" value={habit_description} onChange={this.handleChange} />
           <input id="reward" type="text" name="reward" value={reward} placeholder="Reward" onChange={this.handleChange} />
           <input id="habitar" type="text" name="habitar" value={habitar} onChange={this.handleChange} />
-          <input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
-          onClick={this.handleCheck} />
+          {opt}
           <input id="phone" type="number" name="phone" value={phone} onChange={this.handleChange} />
           <input id="reminder_time" type="time" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
 
