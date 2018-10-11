@@ -4,7 +4,7 @@ import { Img } from '../theme/types'
 import media from '../theme/media'
 
 export const HabitarLogo = styled(Img)`
-	content: url('/logos/habitar-orange.png');
+	content: url('/logos/habitar-logo.png');
 	max-width: 45%;
 
 	${media.tablet `

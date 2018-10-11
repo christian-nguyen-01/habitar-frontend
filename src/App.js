@@ -41,7 +41,6 @@ class App extends Component {
                             <Route path = "/About" component = { About } />
                             <Route exact path = "/users/:user_id/habits/:id/reward" render = {({match}) => <RewardPage params={match.params} />} />
                         </Switch>
-						<Footer />
                     </div>
                 </Router>
             </div>

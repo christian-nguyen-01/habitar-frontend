@@ -3,7 +3,8 @@ import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {postHabit} from '../services/Api'
 import {Redirect} from 'react-router-dom'
-import '../css/Forms.css'
+import { Bg } from '../theme/types'
+import { Form, Card } from '../theme/forms'
 
 class CreateHabit extends Component {
 
@@ -71,10 +72,10 @@ class CreateHabit extends Component {
 
     return(
       // TODO: replace classnames with styled components
-      <div className="center">
+      <Bg>
       <h1>Create a new Habit</h1>
-        <div className="card">
-          <form onSubmit={this.onSubmit} className="createForm">
+        <Card>
+          <Form onSubmit={this.onSubmit} className="createForm">
 
           <label>Habit:</label>
           <input
@@ -171,11 +172,11 @@ class CreateHabit extends Component {
   		    />
 
         <button type="submit" onClick={this.onSumbit}>Create Habit</button>
-        </form>
+        </Form>
 
         {this.state.success && <Redirect to="/dashboard" />}
-      </div>
-    </div>
+      </Card>
+    </Bg>
     )
   }
 }

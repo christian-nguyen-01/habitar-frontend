@@ -16,6 +16,9 @@ class LandingPage extends Component {
 	                <A to="/login">Login</A>
                 </LinkContainer>
 
+				<h1>Hello World</h1>
+				<p>Lorem Ipsum</p>
+
             </Bg>
         );
     }

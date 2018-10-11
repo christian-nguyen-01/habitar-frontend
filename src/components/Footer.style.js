@@ -14,6 +14,10 @@ export const FooterContainer = styled(Flex)`
 	padding-top: 8px;
 	background-color: #FFF;
 	width: 100vw;
+
+	${media.tablet `
+		padding-left: 11px;
+	`}
 `;
 
 export const FooterItem = styled.p`

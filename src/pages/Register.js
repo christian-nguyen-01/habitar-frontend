@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import AuthService from '../services/AuthService'
-import {Bg} from '../theme/types'
+import { Bg } from '../theme/types'
+import { Form, Card } from '../theme/forms'
 
 class Register extends Component {
 
@@ -27,14 +28,14 @@ class Register extends Component {
         return (
           <Bg>
             <h1>Register</h1>
-		        <div className="card">
-					    <form onSubmit={this.onSubmit} className="registerForm">
+		        <Card>
+					<Form onSubmit={this.onSubmit} className="registerForm">
 
   						<label>Email</label>
   						<input className="form-item"
   							type="email"
   							name="email"
-                id="email"
+                			id="email"
   							value={email}
   							onChange={this.onChange}
   						/>
@@ -44,17 +45,16 @@ class Register extends Component {
   						<input className="form-item"
   							type="password"
   							name="password"
-                id="password"
+                            id="password"
   							value={password}
   							onChange={this.onChange}
   						/>
   						  {this.state.errors.password && <div>Error: Password  {this.state.errors.password[0]}</div>}
 
-						   <button
-               className="form-submit" id="submit" onSubmit={this.onSubmit}>Register</button>
-					   </form>
+						   <button className="form-submit" id="submit" onSubmit={this.onSubmit}>Register</button>
+					</Form>
 					{this.state.registerSuccess && <Redirect to="/dashboard" />}
-				  </div>
+				</Card>
 	      </Bg>
         );
     }

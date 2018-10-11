@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import { Flex } from './grid'
 
 export const Bg = styled(Flex)`
-background:linear-gradient(45deg, #833ab4, #fd1d1d 80%);
-min-width: 100%;
-min-height: 100%;
-background-size: cover;
-position: fixed;
-flex-flow: column nowrap;
-justify-content: center;
-align-items: center;
+	background-image: url('/assets/general-background.png');
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	position: fixed;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
 `
 export const A = styled(Link)`
 	color: white;

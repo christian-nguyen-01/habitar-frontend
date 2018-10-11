@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import AuthService from '../services/AuthService'
-import {Bg} from '../theme/types'
+import { Bg } from '../theme/types'
+import { Form, Card } from '../theme/forms'
 
 class Login extends Component {
   constructor(){
