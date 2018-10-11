@@ -4,6 +4,7 @@ import withAuth from '../services/withAuth'
 import {editHabit, getHabit} from '../services/Api'
 // import HabitCard from '../components/HabitCard'
 import {Redirect} from 'react-router-dom'
+import '../css/FormStyle.css'
 
 class CreateHabit extends Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class CreateHabit extends Component {
           habit_description: "",
           opt_in: false,
           phone: 0,
-          reminder_time: "12:00"
+          reminder_time: "12:00",
+          power_reward:""
         }
       },
       success: false
@@ -75,35 +77,115 @@ class CreateHabit extends Component {
   }
 
   render(){
-    let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone } = this.state.form.habit
-    let opt= opt_in? <input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
-    onClick={this.handleCheck} checked/>:<input id="opt_in" type="checkbox" name="opt_in" value={opt_in}
-    onClick={this.handleCheck} />
+    let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone, power_reward } = this.state.form.habit
+
+    let opt= opt_in?
+    <input className="form-item" id="opt_in" type="checkbox" name="opt_in" value={opt_in}
+    onClick={this.handleCheck} checked/>
+    :
+    <input className="form-item" id="opt_in" type="checkbox" name="opt_in" value={opt_in}
+    onClick={this.handleCheck}/>
     return(
-
-      <div>
-        <form onSubmit={this.onSubmit} className="createForm">
-          <input id="child" type="text" name="child" value={child} placeholder="Child" onChange={this.handleChange} />
-          <input id="habit_name" type="text" name="habit_name" placeholder="Habit" value={habit_name} onChange={this.handleChange} />
-          <input id="habit_description" type="text" name="habit_description" placeholder="Habit Description" value={habit_description} onChange={this.handleChange} />
-          <input id="reward" type="text" name="reward" value={reward} placeholder="Reward" onChange={this.handleChange} />
-
-          <select
-          id="habitar"
-          name="habitar"
-          value={habitar}
-          onChange={this.handleChange}
+      //TODO: remove class names
+      <div className="center">
+      <h1> Edit Habit </h1>
+      <div className="card">
+        <form
+          onSubmit={this.onSubmit}
+          className="createForm"
           >
-          <option value="1">Habitar 1</option>
-          <option value="2">Habitar 2</option>
-          <option value="3">Habitar 3</option>
-          <option value="4">Habitar 4</option>
-          <option value="5">Habitar 5</option>
-          </select>
 
+          <label>Child Name:</label>
+            <input
+              className="form-item"
+              id="child"
+              type="text"
+              name="child"
+              value={child}
+              placeholder="Child"
+              onChange={this.handleChange}
+              />
+
+          <label>Habit:</label>
+            <input
+            className="form-item"
+            id="habit_name"
+            type="text"
+            name="habit_name"
+            placeholder="Habit"
+            value={habit_name}
+            onChange={this.handleChange}
+            />
+
+          <label>Additional information about Habit:</label>
+            <input
+            className="form-item"
+            id="habit_description"
+            type="text"
+            name="habit_description"
+            placeholder="Habit Description"
+            value={habit_description}
+            onChange={this.handleChange}
+            />
+
+          <label>1 week Reward:</label>
+            <input
+            className="form-item"
+            id="reward"
+            type="text"
+            name="reward"
+            value={reward}
+            placeholder="Reward"
+            onChange={this.handleChange}
+            />
+
+          <label>3 Week Reward</label>
+    		    <input
+            className="form-item"
+    			  id="power_reward"
+    			  type="text"
+    			  name="power_reward"
+    			  placeholder="Reward for a 21 day streak"
+    			  value={power_reward}
+    			  onChange={this.handleChange}
+    		    />
+
+          <label>Select your Habitar:</label>
+            <select
+            className="form-item"
+            id="habitar"
+            name="habitar"
+            value={habitar}
+            onChange={this.handleChange}
+            >
+              <option value="1">Habitar 1</option>
+              <option value="2">Habitar 2</option>
+              <option value="3">Habitar 3</option>
+              <option value="4">Habitar 4</option>
+              <option value="5">Habitar 5</option>
+            </select>
+
+          <label>Opt in for text messsages?</label>
           {opt}
-          <input id="phone" type="tel" name="phone" value={phone} onChange={this.handleChange} />
-          <input id="reminder_time" type="time" name="reminder_time" value={reminder_time} onChange={this.handleChange} />
+
+          <label>Phone number</label>
+            <input
+            className="form-item"
+            id="phone"
+            type="tel"
+            name="phone"
+            value={phone}
+            onChange={this.handleChange}
+            />
+
+          <label>When is the habit performed?</label>
+            <input
+            className="form-item"
+            id="reminder_time"
+            type="time"
+            name="reminder_time"
+            value={reminder_time} onChange={this.handleChange}
+            />
 
           <button type="submit" onClick={this.onSumbit}>Edit Habit</button>
 
@@ -112,7 +194,7 @@ class CreateHabit extends Component {
         {this.state.success &&
           <Redirect to="/dashboard" />
         }
-
+        </div>
       </div>
     )
   }

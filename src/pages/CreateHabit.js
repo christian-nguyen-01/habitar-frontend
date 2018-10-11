@@ -3,6 +3,7 @@ import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {postHabit} from '../services/Api'
 import {Redirect} from 'react-router-dom'
+import '../css/FormStyle.css'
 
 class CreateHabit extends Component {
 
@@ -68,13 +69,15 @@ class CreateHabit extends Component {
 
     let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone, power_reward } = this.state.form.habit
 
-    return(
-
-      <div>
-
+    return( //// TODO: rollback classnames
+      <div className="center">
+      <h1>Create a new Habit</h1>
+        <div className="card">
         <form onSubmit={this.onSubmit} className="createForm">
 
+        <label>Child Name:</label>
         <input
+        className="form-item"
 			  id="child"
 			  type="text"
 			  name="child"
@@ -83,7 +86,9 @@ class CreateHabit extends Component {
 			  onChange={this.handleChange}
 		    />
 
+        <label>Habit:</label>
         <input
+        className="form-item"
 			  id="habit_name"
 			  type="text" name="habit_name"
 			  placeholder="Habit"
@@ -91,7 +96,9 @@ class CreateHabit extends Component {
 			  onChange={this.handleChange}
 		    />
 
+        <label>Additional description for the habit:</label>
         <input
+        className="form-item"
 			  id="habit_description"
 			  type="text"
 			  name="habit_description"
@@ -100,7 +107,9 @@ class CreateHabit extends Component {
 			  onChange={this.handleChange}
 		    />
 
+        <label>1 Week Reward</label>
         <input
+        className="form-item"
 			  id="reward"
 			  type="text"
 			  name="reward"
@@ -109,7 +118,9 @@ class CreateHabit extends Component {
 			  onChange={this.handleChange}
 		    />
 
+        <label>3 Week Reward</label>
 		    <input
+        className="form-item"
 			  id="power_reward"
 			  type="text"
 			  name="power_reward"
@@ -118,7 +129,9 @@ class CreateHabit extends Component {
 			  onChange={this.handleChange}
 		    />
 
+        <label>Select your Habitar</label>
         <select
+        className="form-item"
 			  id="habitar"
 			  name="habitar"
 			  value={habitar}
@@ -131,38 +144,44 @@ class CreateHabit extends Component {
         <option value="5">Habitar 5</option>
         </select>
 
+        <label>Opt in for text notifications?</label>
         <input
+        className="form-item"
         id="opt_in"
 			  type="checkbox"
 			  name="opt_in"
 			  value={opt_in}
         onClick={this.handleCheck}
-		  />
+		    />
 
-          <input
+        <label>Phone number</label>
+        <input
+        className="form-item"
 			  id="phone"
 			  type="tel"
 			  name="phone"
 			  value={phone}
 			  onChange={this.handleChange}
-		  />
+		    />
 
-          <input
+        <label>When is the Habit performed?</label>
+        <input
+        className="form-item"
 			  id="reminder_time"
 			  type="time"
 			  name="reminder_time"
 			  value={reminder_time}
 			  onChange={this.handleChange}
-		  />
+		    />
 
-          <button type="submit" onClick={this.onSumbit}>Create Habit</button>
+        <button type="submit" onClick={this.onSumbit}>Create Habit</button>
 
         </form>
 
         {this.state.success &&
           <Redirect to="/dashboard" />
         }
-
+        </div>
       </div>
     )
   }
