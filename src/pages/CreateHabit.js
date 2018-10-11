@@ -22,8 +22,8 @@ class CreateHabit extends Component {
           opt_in: false,
           phone: "",
           reminder_time: "12:00",
-		  power_streak: false,
-		  power_reward: ""
+          power_streak: false,
+          power_reward: ""
         }
       },
       success: false
@@ -66,7 +66,7 @@ class CreateHabit extends Component {
 
   render(){
 
-    let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone, power_streak, power_reward } = this.state.form.habit
+    let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone, power_reward } = this.state.form.habit
 
     return(
 
@@ -74,69 +74,74 @@ class CreateHabit extends Component {
 
         <form onSubmit={this.onSubmit} className="createForm">
 
-          <input
+        <input
 			  id="child"
 			  type="text"
 			  name="child"
 			  value={child}
 			  placeholder="Child"
 			  onChange={this.handleChange}
-		  />
+		    />
 
-          <input
+        <input
 			  id="habit_name"
 			  type="text" name="habit_name"
 			  placeholder="Habit"
 			  value={habit_name}
 			  onChange={this.handleChange}
-		  />
+		    />
 
-          <input
+        <input
 			  id="habit_description"
 			  type="text"
 			  name="habit_description"
 			  placeholder="Habit Description"
 			  value={habit_description}
 			  onChange={this.handleChange}
-		  />
+		    />
 
-          <input
+        <input
 			  id="reward"
 			  type="text"
 			  name="reward"
 			  placeholder="Reward for a 7 day streak"
 			  value={reward}
 			  onChange={this.handleChange}
-		  />
+		    />
 
-		  <input
+		    <input
 			  id="power_reward"
 			  type="text"
 			  name="power_reward"
 			  placeholder="Reward for a 21 day streak"
 			  value={power_reward}
 			  onChange={this.handleChange}
-		  />
+		    />
 
-          <input
+        <select
 			  id="habitar"
-			  type="text"
 			  name="habitar"
 			  value={habitar}
 			  onChange={this.handleChange}
-		  />
+		    >
+        <option value="1">Habitar 1</option>
+        <option value="2">Habitar 2</option>
+        <option value="3">Habitar 3</option>
+        <option value="4">Habitar 4</option>
+        <option value="5">Habitar 5</option>
+        </select>
 
-          <input
-		  	  id="opt_in"
+        <input
+        id="opt_in"
 			  type="checkbox"
 			  name="opt_in"
 			  value={opt_in}
-	          onClick={this.handleCheck}
+        onClick={this.handleCheck}
 		  />
 
           <input
 			  id="phone"
-			  type="number"
+			  type="tel"
 			  name="phone"
 			  value={phone}
 			  onChange={this.handleChange}
