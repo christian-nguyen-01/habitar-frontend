@@ -51,8 +51,8 @@ class Login extends Component {
 
     return (
       <Bg>
+      <h1>Login</h1>
         <div className="card">
-          <h1>Login</h1>
           <form onSubmit = {this.onSubmit} className="loginForm">
             <input
               className="form-item"
