@@ -1,4 +1,4 @@
-.center{
+/* .center{
   position: absolute;
   height: 100%;
   width: 100%;
@@ -6,8 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
+
  .card{
+  margin-top: 30px;
   background-color: #fff;
   border-radius: 15px;
   padding: 0.8rem;
@@ -16,6 +18,11 @@
   display: flex;
   flex-direction: column;
 }
+
+ label {
+
+ }
+ 
  .card h1{
   text-align: center;
   margin-top: 0;
