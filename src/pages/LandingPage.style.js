@@ -4,7 +4,7 @@ import { Img } from '../theme/types'
 import media from '../theme/media'
 
 export const HabitarLogo = styled(Img)`
-	content: url('/logos/habitar-orange.png');
+	content: url('/logos/habitar-logo.png');
 	max-width: 45%;
 
 	${media.tablet `
@@ -29,7 +29,7 @@ export const LinkContainer = styled(Flex)`
 export const LandingLine = styled.p`
 	color: white;
 	font-size: 3vw;
-	font-family: 'Chewy', cursive;
+	font-family: 'Fredoka One', cursive;
 	padding: 3%
 
 	${media.tablet `

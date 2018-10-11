@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bg, A } from '../theme/types'
+import { LeavesBg, Bg, A } from '../theme/types'
 import { HabitarLogo, LinkContainer, LandingLine } from './LandingPage.style'
 
 class LandingPage extends Component {
@@ -7,7 +7,7 @@ class LandingPage extends Component {
     render() {
 
         return (
-			<Bg>
+			<LeavesBg>
                 <HabitarLogo />
 
                 <LinkContainer justify="space-evenly">
@@ -16,7 +16,7 @@ class LandingPage extends Component {
 	                <A to="/login">Login</A>
                 </LinkContainer>
 
-            </Bg>
+            </LeavesBg>
         );
     }
 }
