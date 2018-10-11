@@ -26,7 +26,11 @@ class HabitPage extends Component {
         }
     }
 
-	playSound = () => {
+	streakSound = () => {
+		new Audio('/sounds/streak.wav').play()
+	}
+
+	dragonSound = () => {
 		let {completed, habitar} = this.state.form.habit
 		let habitarSound = '/sounds/sound' + habitar + '.wav'
 		new Audio(habitarSound).play()
@@ -40,7 +44,9 @@ class HabitPage extends Component {
         if(habit.streak_count >= 7) habit['completed'] = true
 		if(habit.streak_count >= 21) habit['power_streak'] = true
 		if(habit.completed) {
-			this.playSound()
+			this.dragonSound()
+		} else {
+			this.streakSound()
 		}
         this.setState({habit})
         editHabit(user_id, id, this.state.form)
@@ -76,6 +82,7 @@ class HabitPage extends Component {
 		let pUnlocked = <i style={{color:"#4ddbff"}} class="fas fa-lock-open"></i>
 		let powerRewardIcon = power_streak? pUnlocked : pLocked
 		let habitarImg = completed? '/habitars/habitar' + habitar + '.png' : '/eggs/egg' + habitar + '.png'
+		let animateClass = completed? "animated tada slower delay-5s" : "animated wobble slower delay-5s"
 
         for(let i=1; i<=7; i++) {
             if(i <= streak_count % 7) streakCounter.push(<i style={{color:"gold"}} className="fas fa-bolt"></i>)
@@ -92,7 +99,7 @@ class HabitPage extends Component {
         return (
             <div className="HabitPage">
 	            <h1> {child}&rsquo;s Habitar</h1>
-	            <img src={habitarImg} alt="Keep up your habit to hatch your habitar"></img>
+	            <img className={animateClass} src={habitarImg} alt="Keep up your habit to hatch your habitar"></img>
 	            <h1> {habit_name}</h1>
 	            <p> {habit_description}</p>
 	            {streakCounter}

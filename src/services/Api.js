@@ -17,6 +17,7 @@ let getHabits = function(userId) {
 }
 
 let getHabit = function(userId, habitId) {
+	console.log(userId, habitId);
   return fetch(BASE + '/users/' + userId + '/habits/' + habitId)
   .then((res) => {
     let json = res.json()
