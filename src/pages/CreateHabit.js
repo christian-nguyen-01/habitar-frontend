@@ -73,109 +73,111 @@ class CreateHabit extends Component {
     return(
       // TODO: replace classnames with styled components
       <Bg>
-        <h1>Create a new habit</h1>
-        <div className="card">
-          <form onSubmit={this.onSubmit} className="createForm">
+	  	<div className="form-container">
+	        <h1>Create a new habit</h1>
+	        <div className="card">
+	          <form onSubmit={this.onSubmit} className="createForm">
 
-          <label>Habit:</label>
-          <input
-          className="form-item"
-    			  id="child"
-    			  type="text"
-    			  name="child"
-    			  value={child}
-    			  placeholder="Child"
-    			  onChange={this.handleChange}
-    		    />
+	          <label>Habit:</label>
+	          <input
+	          className="form-item"
+	    			  id="child"
+	    			  type="text"
+	    			  name="child"
+	    			  value={child}
+	    			  placeholder="Child"
+	    			  onChange={this.handleChange}
+	    		    />
 
-          <label>Habit:</label>
-          <input
-            className="form-item"
-    			  id="habit_name"
-    			  type="text" name="habit_name"
-    			  placeholder="Habit"
-    			  value={habit_name}
-    			  onChange={this.handleChange}
-  		      />
+	          <label>Habit:</label>
+	          <input
+	            className="form-item"
+	    			  id="habit_name"
+	    			  type="text" name="habit_name"
+	    			  placeholder="Habit"
+	    			  value={habit_name}
+	    			  onChange={this.handleChange}
+	  		      />
 
-          <label>Describe the Habit</label>
-          <input
-            className="form-item"
-    			  id="habit_description"
-    			  type="text"
-    			  name="habit_description"
-    			  placeholder="Habit Description"
-    			  value={habit_description}
-    			  onChange={this.handleChange}
-    		    />
+	          <label>Describe the Habit</label>
+	          <input
+	            className="form-item"
+	    			  id="habit_description"
+	    			  type="text"
+	    			  name="habit_description"
+	    			  placeholder="Habit Description"
+	    			  value={habit_description}
+	    			  onChange={this.handleChange}
+	    		    />
 
-          <label>1 week reward:</label>
-          <input
-          className="form-item"
-  			  id="reward"
-  			  type="text"
-  			  name="reward"
-  			  placeholder="Reward for a 7 day streak"
-  			  value={reward}
-  			  onChange={this.handleChange}
-  		    />
+	          <label>1 week reward:</label>
+	          <input
+	          className="form-item"
+	  			  id="reward"
+	  			  type="text"
+	  			  name="reward"
+	  			  placeholder="Reward for a 7 day streak"
+	  			  value={reward}
+	  			  onChange={this.handleChange}
+	  		    />
 
-        <label>3 week reward:</label>
-  		  <input
-          className="form-item"
-  			  id="power_reward"
-  			  type="text"
-  			  name="power_reward"
-  			  placeholder="Reward for a 21 day streak"
-  			  value={power_reward}
-  			  onChange={this.handleChange}
-  		    />
+	        <label>3 week reward:</label>
+	  		  <input
+	          className="form-item"
+	  			  id="power_reward"
+	  			  type="text"
+	  			  name="power_reward"
+	  			  placeholder="Reward for a 21 day streak"
+	  			  value={power_reward}
+	  			  onChange={this.handleChange}
+	  		    />
 
-        <label>Choose your Habitar:</label>
-        <input
-          className="form-item"
-  			  id="habitar"
-  			  type="text"
-  			  name="habitar"
-  			  value={habitar}
-  			  onChange={this.handleChange}
-  		    />
+	        <label>Choose your Habitar:</label>
+	        <input
+	          className="form-item"
+	  			  id="habitar"
+	  			  type="text"
+	  			  name="habitar"
+	  			  value={habitar}
+	  			  onChange={this.handleChange}
+	  		    />
 
-        <label>Opt in for text messages</label>
-        <input
-          className="form-item"
-		  	  id="opt_in"
-  			  type="checkbox"
-  			  name="opt_in"
-  			  value={opt_in}
-	        onClick={this.handleCheck}
-		      />
+	        <label>Opt in for text messages</label>
+	        <input
+	          className="form-item"
+			  	  id="opt_in"
+	  			  type="checkbox"
+	  			  name="opt_in"
+	  			  value={opt_in}
+		        onClick={this.handleCheck}
+			      />
 
-        <label>Phone number:</label>
-        <input
-          className="form-item"
-  			  id="phone"
-  			  type="number"
-  			  name="phone"
-  			  value={phone}
-  			  onChange={this.handleChange}
-  		    />
+	        <label>Phone number:</label>
+	        <input
+	          className="form-item"
+	  			  id="phone"
+	  			  type="number"
+	  			  name="phone"
+	  			  value={phone}
+	  			  onChange={this.handleChange}
+	  		    />
 
-        <label>When is the Habit performed?</label>
-        <input
-          className="form-item"
-  			  id="reminder_time"
-  			  type="time"
-  			  name="reminder_time"
-  			  value={reminder_time}
-  			  onChange={this.handleChange}
-  		    />
+	        <label>When is the Habit performed?</label>
+	        <input
+	          className="form-item"
+	  			  id="reminder_time"
+	  			  type="time"
+	  			  name="reminder_time"
+	  			  value={reminder_time}
+	  			  onChange={this.handleChange}
+	  		    />
 
-        <button className="form-submit" type="submit" onClick={this.onSumbit}>Create Habit</button>
-        </form>
+	        <button className="form-submit" type="submit" onClick={this.onSumbit}>Create Habit</button>
+	        </form>
 
-        {this.state.success && <Redirect to="/dashboard" />}
-      </div>
+	        {this.state.success && <Redirect to="/dashboard" />}
+	      </div>
+	  </div>
     </Bg>
     )
   }

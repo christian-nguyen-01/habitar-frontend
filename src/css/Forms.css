@@ -8,11 +8,16 @@
   align-items: center;
 } */
 
+ .form-container {
+  margin-top: 50px;
+ }
+
  .card{
   margin-top: 30px;
   background-color: #fff;
   border-radius: 15px;
   padding: 0.8rem;
+  margin-bottom: 80px;
 }
  .card > form{
   display: flex;
@@ -20,9 +25,23 @@
 }
 
  label {
-
+ font-family: 'Fredoka One', cursive;
+ padding-bottom: 3px;
  }
- 
+
+ ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: 'Roboto Condensed', sans-serif;
+}
+ ::-moz-placeholder { /* Firefox 19+ */
+  font-family: 'Roboto Condensed', sans-serif;
+}
+ :-ms-input-placeholder { /* IE 10+ */
+  font-family: 'Roboto Condensed', sans-serif;
+}
+ :-moz-placeholder { /* Firefox 18- */
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
  .card h1{
   text-align: center;
   margin-top: 0;
