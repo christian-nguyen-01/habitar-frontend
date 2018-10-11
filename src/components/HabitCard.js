@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import {deleteHabit} from '../services/Api'
+import '../css/HabitCard.css'
+
 class HabitCard extends Component {
-	
+
 delete = (e)=>{
     e.preventDefault()
     console.log(this.props.habit)
@@ -19,10 +21,16 @@ delete = (e)=>{
 
     timeSplit[0] >= 12 ? time = `${timeSplit[0] - 12}:${timeSplit[1]} PM` : time = `${timeSplit[0]}:${timeSplit[1]} AM`
     return (
-      <div>
-        <a className="habitCard" href={'/users/'+habit.user_id+'/habits/'+habit.id}>{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i className="fas fa-bolt"></i>{streak_count}</a>
-        <a className = 'edit' href= {'/users/'+habit.user_id+'/habits/'+habit.id+'/edit'}>Edit</a>
-        <p className = 'delete' onClick={this.delete}> Delete </p>
+      <div className="habit-card">
+        <a className="habit-info" href={'/users/'+habit.user_id+'/habits/'+habit.id}>
+			<div className="habit-item">{child} | {habit_name} | {time} | {completed?'✅':'ⓧ'} | <i className="fas fa-bolt"></i>{streak_count}
+			</div>
+		</a>
+
+		<div className="edit-delete">
+	        <a id='edit' href= {'/users/'+habit.user_id+'/habits/'+habit.id+'/edit'}>Edit</a>
+	        <a id='delete' href="#" onClick={this.delete}> Delete </a>
+		</div>
       </div>
     )
   }

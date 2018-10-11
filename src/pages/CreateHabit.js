@@ -78,7 +78,7 @@ class CreateHabit extends Component {
 	        <div className="card">
 	          <form onSubmit={this.onSubmit} className="createForm">
 
-	          <label>Habit:</label>
+	          <label>Child Name:</label>
 	          <input
 	          className="form-item"
 	    			  id="child"
@@ -132,15 +132,20 @@ class CreateHabit extends Component {
 	  			  onChange={this.handleChange}
 	  		    />
 
-	        <label>Choose your Habitar:</label>
-	        <input
-	          className="form-item"
-	  			  id="habitar"
-	  			  type="text"
-	  			  name="habitar"
-	  			  value={habitar}
-	  			  onChange={this.handleChange}
-	  		    />
+			<label>Select your Habitar:</label>
+			 <select
+			 className="form-item"
+			 id="habitar"
+			 name="habitar"
+			 value={habitar}
+			 onChange={this.handleChange}
+			 >
+			   <option value="1">Habitar 1</option>
+			   <option value="2">Habitar 2</option>
+			   <option value="3">Habitar 3</option>
+			   <option value="4">Habitar 4</option>
+			   <option value="5">Habitar 5</option>
+			 </select>
 
 	        <label>Opt in for text messages</label>
 	        <input
