@@ -13,8 +13,9 @@ class RewardPage extends Component {
             user_id: this.props.userId,
             habit_name: "",
             child: "",
-            habitar: 0,
-            reward: ""
+            habitar: 1,
+            reward: "",
+			power_reward: ""
           }
         },
         success: false
@@ -36,8 +37,8 @@ class RewardPage extends Component {
       })
     }
     render(){
-        let {habit_name, child, habitar, reward} = this.state.form.habit
-        let habitarimg = '/habitar'+habitar+'.jpg'
+        let {habit_name, child, habitar, reward, power_reward} = this.state.form.habit
+        let habitarimg = '/habitar'+ habitar + '.jpg'
         console.log(habitarimg);
         return(
             <div className="RewardPage">

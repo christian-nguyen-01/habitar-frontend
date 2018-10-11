@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {deleteHabit} from '../services/Api'
-class HabitCard extends Component{
+class HabitCard extends Component {
+	
 delete = (e)=>{
     e.preventDefault()
     console.log(this.props.habit)
