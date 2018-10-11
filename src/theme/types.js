@@ -28,14 +28,12 @@ export const A = styled(Link)`
 	text-decoration: none;
 	font-size: 3vw;
 	font-family: 'Fredoka One', cursive;
-	padding: 3%
 	&:hover {
 		content: ' ';
 		text-decoration: none;
 	    color: #F7B733;
 	    font-size: 3vw;
 	    font-family: 'Fredoka One', cursive;
-	    padding: 3%
 	}
 `
 export const A2 = styled(Link)`
@@ -43,14 +41,12 @@ export const A2 = styled(Link)`
 	text-decoration: none;
 	font-size: 2vw;
 	font-family: 'Roboto Condensed', sans-serif;
-	padding: 3%
 	&:hover {
 		content: ' ';
 		text-decoration: none;
 	    color: #F7B733;
 	    font-size: 2vw;
 	    font-family: 'Roboto Condensed', sans-serif;
-	    padding: 3%
 	}
 `
 

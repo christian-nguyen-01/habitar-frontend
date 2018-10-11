@@ -22,16 +22,18 @@ a:hover {
 
 .habit-info {
   display: flex;
-  padding-left: 2%;
   justify-content: space-around;
-}
-
-.habit-item {
-	padding: 8px;
 }
 
 .edit-delete {
   max-width: 20%;
-  padding-right: 2%;
   justify-content: flex-end;
+}
+
+#streak {
+	color: #F7B733 !important;
+}
+
+#power {
+	color: #4ddbff !important;
 }
