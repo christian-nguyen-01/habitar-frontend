@@ -97,7 +97,7 @@ class CreateHabit extends Component {
     			  onChange={this.handleChange}
   		      />
 
-          <label>Describe the Habit</labl>
+          <label>Describe the Habit</label>
           <input
             className="form-item"
     			  id="habit_description"
@@ -175,6 +175,7 @@ class CreateHabit extends Component {
 
         {this.state.success && <Redirect to="/dashboard" />}
       </div>
+    </div>
     )
   }
 }
