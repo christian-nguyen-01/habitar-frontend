@@ -21,7 +21,7 @@ class CreateHabit extends Component {
           habit_description: "",
           opt_in: false,
           phone: "",
-          reminder_time: "2000-01-01T08:30:00.000Z",
+          reminder_time: "12:00",
 		  power_streak: false,
 		  power_reward: ""
         }
