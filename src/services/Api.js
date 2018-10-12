@@ -1,4 +1,4 @@
-const BASE = 'http://localhost:3000'
+const BASE = 'https://habitar-backend.herokuapp.com'
 
 let getUser = function(id) {
     return fetch(BASE + '/users/' + id)

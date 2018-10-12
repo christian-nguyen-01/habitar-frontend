@@ -2,7 +2,7 @@ import decode from 'jwt-decode'
 
 class AuthService {
 	constructor(domain) {
-		this.domain = domain || 'http://localhost:3000'
+		this.domain = domain || 'https://habitar-backend.herokuapp.com'
 	}
 
 	login = (user) => {
