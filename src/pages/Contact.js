@@ -3,13 +3,15 @@ import {Bg} from '../theme/types'
 import './Contact.css'
 import { FuzionLogo } from './Contact.style'
 
-
 class Contact extends Component {
     render() {
         return (
-            <Bg>
 
+            <Bg>
+              <a href='https://github.com/Habitar' className='fuzionLogo'>
                 <FuzionLogo/>
+              </a>
+
                 <div className="box">
                   <div className="info">
                     <p>Mary</p>

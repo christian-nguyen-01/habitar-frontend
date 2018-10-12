@@ -7,6 +7,7 @@ export const FuzionLogo = styled(Img)`
 	max-width: 45%;
   margin-top:-2%;
 
+
 	${media.tablet `
 		max-width: 70%;
 		margin-top:-25%;
