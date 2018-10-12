@@ -3,6 +3,7 @@ import withAuth from '../services/withAuth'
 import {editHabit, getHabit} from '../services/Api'
 import {Redirect} from 'react-router-dom'
 // import egg from '../assets/egg.png'
+import {LeavesBg} from '../theme/types'
 import './HabitPage.css'
 
 class HabitPage extends Component {
@@ -41,7 +42,10 @@ class HabitPage extends Component {
         let habit = this.state.form.habit
         let {user_id,id} = this.props.props.params
         if(habit.streak_count < 21) habit['streak_count'] += 1
-        if(habit.streak_count >= 7) habit['completed'] = true
+        if(habit.streak_count >= 7) {
+			habit['completed'] = true
+			habit['power_count'] += 1
+		}
 		if(habit.streak_count >= 21) habit['power_streak'] = true
 		if(habit.completed) {
 			this.dragonSound()
@@ -70,7 +74,7 @@ class HabitPage extends Component {
 
     render() {
 
-        let {habit_name, child, streak_count, habitar, completed, habit_description, power_streak, power_reward} = this.state.form.habit
+        let {habit_name, child, streak_count, habitar, reward, completed, habit_description, power_streak, power_reward} = this.state.form.habit
 
         let {user_id, id} = this.props.props.params
         let streakCounter = []
@@ -94,20 +98,25 @@ class HabitPage extends Component {
 			else powerStreakCounter.push(<i style={{color:'lightgrey'}} className="fas fa-bolt"></i>)
 		}
 
+		let rewardbox
+		if(power_streak) rewardbox=<h1>Congratulations on completing a power streak! You get {power_reward}!</h1>
+		else if(completed) rewardbox= <h1>Congratulations on completing a streak! You get {reward}!</h1>
+		else rewardbox = <h1>keep working on your habit to complete a streak!</h1>
         // let redirectPath='/users/'+user_id+'/habits/'+id+'/reward'
 
         return (
-            <div className="HabitPage">
+            <LeavesBg>
 	            <h1> {child}&rsquo;s Habitar</h1>
 	            <img className={animateClass} src={habitarImg} alt="Keep up your habit to hatch your habitar"></img>
 	            <h1> {habit_name}</h1>
 	            <p> {habit_description}</p>
+				{rewardbox}
 	            {streakCounter}
 				{rewardIcon}
 	            <button onClick={this.addStreak}>click!</button>
 				Power Streak: {powerStreakCounter}
 				{powerRewardIcon}
-            </div>
+            </LeavesBg>
         )
     }
 }

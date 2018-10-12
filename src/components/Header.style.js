@@ -17,7 +17,7 @@ export const NavItem = styled(Link)`
 	margin-right: 20px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Fredoka One', cursive;
 	position: relative;
 	font-size: 1.2em;
 	text-decoration: none;

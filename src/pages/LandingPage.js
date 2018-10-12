@@ -4,7 +4,13 @@ import { HabitarLogo, LinkContainer, LandingLine } from './LandingPage.style'
 
 class LandingPage extends Component {
 
+	jungleSounds = () => {
+		new Audio('/sounds/jungle.wav').play()
+	}
+
     render() {
+
+		this.jungleSounds()
 
         return (
 			<LeavesBg>

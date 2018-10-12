@@ -54,6 +54,7 @@ class Login extends Component {
       <h1>Login</h1>
         <div className="card">
           <form onSubmit = {this.onSubmit} className="loginForm">
+		    <label>Email</label>
             <input
               className="form-item"
               placeholder="Email"
@@ -63,6 +64,7 @@ class Login extends Component {
               onChange={this.onChange.bind(this)}
               value={email}
             />
+			<label>Password</label>
             <input
               className="form-item"
               placeholder="Password"
