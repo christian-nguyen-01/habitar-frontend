@@ -4,7 +4,7 @@ import './Landing.css'
 class Landing extends Component {
 
     render() {
-
+      
 		let habitarLogo = '/logos/habitar-orange.png'
 
         return (

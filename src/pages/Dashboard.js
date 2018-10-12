@@ -5,6 +5,7 @@ import AuthService from '../services/AuthService'
 import {getUser, getHabits} from '../services/Api'
 import HabitCard from '../components/HabitCard'
 import {Bg, A2} from '../theme/types'
+import '../css/Dashboard.css'
 import '../css/Forms.css'
 
 class Dashboard extends Component{
@@ -50,7 +51,7 @@ class Dashboard extends Component{
 
         return(
             <Bg>
-                <h1>Hello { username }!</h1>
+                <h1 className="dashboard-header">Hello { username.toUpperCase() }!</h1>
                 <div className="form-container">
                   {habits.map(habit => {
                     return(

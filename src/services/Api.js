@@ -1,4 +1,4 @@
-const BASE = 'http://localhost:3000'
+const BASE = process.env.REACT_APP_API_HOST
 
 let getUser = function(id) {
     return fetch(BASE + '/users/' + id)
