@@ -4,7 +4,10 @@ import {editHabit, getHabit} from '../services/Api'
 import {Redirect} from 'react-router-dom'
 import {LeavesBg} from '../theme/types'
 import '../css/HabitPage.css'
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 class HabitPage extends Component {
     constructor(props) {
