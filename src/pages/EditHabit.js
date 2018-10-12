@@ -162,20 +162,83 @@ class CreateHabit extends Component {
 	    			  onChange={this.handleChange}
 	    		    />
 
-	           <label>Select your Habitar:</label>
-	            <select
-	            className="form-item"
-	            id="habitar"
-	            name="habitar"
-	            value={habitar}
-	            onChange={this.handleChange}
-	            >
-	              <option value="1">Habitar 1</option>
-	              <option value="2">Habitar 2</option>
-	              <option value="3">Habitar 3</option>
-	              <option value="4">Habitar 4</option>
-	              <option value="5">Habitar 5</option>
-	            </select>
+					<label>Choose your Habitar&#39;s egg:</label>
+	 				 <div className="form-item" id="radioEggImagesContainer">
+	 				   <input
+	 					  className="radioEggImagesButtons"
+	 					  id="habitar1"
+	 					  type="radio"
+	 					  name="habitar"
+	 					  value="1"
+	 					  onChange={this.handleChange}
+	 					  />
+	 					  <label
+	 						className=""
+	 						htmlFor="habitar1"
+	 					  >
+	 						<img className="radioEggImages"src="/eggs/egg1.png" alt="Habitar Egg 1"/>
+	 					  </label>
+
+	 					<input
+	 						className="radioEggImagesButtons"
+	 					   id="habitar2"
+	 					   type="radio"
+	 					   name="habitar"
+	 					   value="2"
+	 					   onChange={this.handleChange}
+	 					   />
+	 					   <label
+	 						 className=""
+	 						 htmlFor="habitar2"
+	 					   >
+	 						 <img className="radioEggImages"src="/eggs/egg2.png" alt="Habitar Egg 2"/>
+	 					   </label>
+
+	 					 <input
+	 						className="radioEggImagesButtons"
+	 						id="habitar3"
+	 						type="radio"
+	 						name="habitar"
+	 						value="3"
+	 						onChange={this.handleChange}
+	 						/>
+	 						<label
+	 						  className=""
+	 						  htmlFor="habitar3"
+	 						>
+	 						  <img className="radioEggImages"src="/eggs/egg3.png" alt="Habitar Egg 3"/>
+	 						</label>
+
+	 					  <input
+	 						  className="radioEggImagesButtons"
+	 						 id="habitar4"
+	 						 type="radio"
+	 						 name="habitar"
+	 						 value="4"
+	 						 onChange={this.handleChange}
+	 						 />
+	 						 <label
+	 						   className=""
+	 						   htmlFor="habitar4"
+	 						 >
+	 						   <img className="radioEggImages"src="/eggs/egg4.png" alt="Habitar Egg 4"/>
+	 						 </label>
+
+	 					   <input
+	 						  className="radioEggImagesButtons"
+	 						  id="habitar5"
+	 						  type="radio"
+	 						  name="habitar"
+	 						  value="5"
+	 						  onChange={this.handleChange}
+	 						  />
+	 						  <label
+	 							className=""
+	 							htmlFor="habitar5"
+	 						  >
+	 							<img className="radioEggImages"src="/eggs/egg5.png" alt="Habitar Egg 5"/>
+	 						  </label>
+	 				  </div>
 
 	          <label>Opt in for text messsages?</label>
 	          {opt}
