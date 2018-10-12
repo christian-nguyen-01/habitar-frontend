@@ -22,7 +22,7 @@ export const NavItem = styled(Link)`
 	font-size: 1.2em;
 	text-decoration: none;
 	transition: 0.5s ease;
-	color: #F7B733
+	color: #F7B733;
 
 	${media.desktop `
 		font-size: 1em;
