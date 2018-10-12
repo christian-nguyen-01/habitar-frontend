@@ -30,7 +30,6 @@ export const LandingLine = styled.p`
 	color: white;
 	font-size: 3vw;
 	font-family: 'Fredoka One', cursive;
-	padding: 3%
 
 	${media.tablet `
 		font-size: 2em;

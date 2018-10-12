@@ -18,7 +18,7 @@ class LandingPage extends Component {
 
                 <LinkContainer justify="space-evenly">
 	                <A to="/register">Register</A>
-	                <LandingLine>|</LandingLine>
+	                <LandingLine>{`\u00A0`}|{`\u00A0`}</LandingLine>
 	                <A to="/login">Login</A>
                 </LinkContainer>
 
