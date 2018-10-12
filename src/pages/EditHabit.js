@@ -162,22 +162,6 @@ class CreateHabit extends Component {
 	    			  onChange={this.handleChange}
 	    		    />
 
-<<<<<<< HEAD
-	           <label>Select your Habitar:</label>
-	            <select
-	            className="form-item"
-	            id="habitar"
-	            name="habitar"
-	            value={habitar}
-	            onChange={this.handleChange}
-	            >
-	              <option value="1">Habitar 1</option>
-	              <option value="2">Habitar 2</option>
-	              <option value="3">Habitar 3</option>
-	              <option value="4">Habitar 4</option>
-	              <option value="5">Habitar 5</option>
-	            </select>
-=======
 					<label>Choose your Habitar&#39;s egg:</label>
 	 				 <div className="form-item" id="radioEggImagesContainer">
 	 				   <input
@@ -255,7 +239,6 @@ class CreateHabit extends Component {
 	 							<img className="radioEggImages"src="/eggs/egg5.png" alt="Habitar Egg 5"/>
 	 						  </label>
 	 				  </div>
->>>>>>> old-forms
 
 	          <label>Opt in for text messsages?</label>
 	          {opt}

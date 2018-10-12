@@ -2,15 +2,9 @@ import React, {Component} from 'react'
 import withAuth from '../services/withAuth'
 import {editHabit, getHabit} from '../services/Api'
 import {Redirect} from 'react-router-dom'
-<<<<<<< HEAD
-// import egg from '../assets/egg.png'
-import {LeavesBg} from '../theme/types'
-import './HabitPage.css'
-=======
 import {LeavesBg} from '../theme/types'
 import '../css/HabitPage.css'
 
->>>>>>> old-forms
 
 class HabitPage extends Component {
     constructor(props) {
@@ -50,16 +44,6 @@ class HabitPage extends Component {
         let {user_id,id} = habit
         if(habit.streak_count < 21) habit['streak_count'] += 1
         if(habit.streak_count >= 7) {
-<<<<<<< HEAD
-    			habit['completed'] = true
-    		}
-    		if(habit.streak_count >= 21) habit['power_streak'] = true
-    		if(habit.completed) {
-    			this.dragonSound()
-    		} else {
-    			this.streakSound()
-    		}
-=======
 			habit['completed'] = true
 		}
 		if(habit.streak_count >= 21) habit['power_streak'] = true
@@ -68,16 +52,11 @@ class HabitPage extends Component {
 		} else {
 			this.streakSound()
 		}
->>>>>>> old-forms
         this.setState({habit})
         editHabit(user_id, id, this.state.form)
     }
 
-<<<<<<< HEAD
     resetStreak = (e) =>{
-=======
-	resetStreak = (e) =>{
->>>>>>> old-forms
       e.preventDefault()
       let habit= this.state.form.habit
       let {user_id,id} = this.props.props.params
@@ -87,10 +66,7 @@ class HabitPage extends Component {
       this.setState({habit})
       editHabit(user_id, id, this.state.form)
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> old-forms
     componentDidMount() {
         let {user_id, id} = this.props.props.params
         console.log(user_id, id);
@@ -133,26 +109,6 @@ class HabitPage extends Component {
 		}
 
 		let rewardbox
-<<<<<<< HEAD
-		if(power_streak) rewardbox=<h1>Congratulations on completing a power streak! You get {power_reward}!</h1>
-		else if(completed) rewardbox= <h1>Congratulations on completing a streak! You get {reward}!</h1>
-		else rewardbox = <h1>keep working on your habit to complete a streak!</h1>
-        // let redirectPath='/users/'+user_id+'/habits/'+id+'/reward'
-
-        return (
-            <LeavesBg>
-	            <h1> {child}&rsquo;s Habitar</h1>
-	            <img className={animateClass} src={habitarImg} alt="Keep up your habit to hatch your habitar"></img>
-	            <h1> {habit_name}</h1>
-	            <p> {habit_description}</p>
-				{rewardbox}
-	            {streakCounter}
-				{rewardIcon}
-	            <button onClick={this.addStreak}>click!</button>
-              <button onClick={this.resetStreak}>reset!</button>
-				Power Streak: {powerStreakCounter}
-				{powerRewardIcon}
-=======
 		if(power_streak) rewardbox=
 		<div className="reward-box">
 			<h1 className="reward-text">Congratulations on completing a power streak!<br/>
@@ -215,7 +171,6 @@ class HabitPage extends Component {
 				<div className="habitarImageContainer">
 					<img className="habitarImage" src={habitarImg} alt="Keep up your habit to hatch your habitar"></img>
 				</div>
->>>>>>> old-forms
             </LeavesBg>
         )
     }
