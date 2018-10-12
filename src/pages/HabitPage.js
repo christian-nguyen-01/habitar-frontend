@@ -12,6 +12,7 @@ class HabitPage extends Component {
         this.state = {
             form:{
                 habit: {
+                  id:"",
                   user_id: "",
                   habit_name: "",
                   child: "",
@@ -40,22 +41,31 @@ class HabitPage extends Component {
     addStreak = (e) => {
         e.preventDefault()
         let habit = this.state.form.habit
-        let {user_id,id} = this.props.props.params
+        let {user_id,id} = habit
         if(habit.streak_count < 21) habit['streak_count'] += 1
         if(habit.streak_count >= 7) {
-			habit['completed'] = true
-			habit['power_count'] += 1
-		}
-		if(habit.streak_count >= 21) habit['power_streak'] = true
-		if(habit.completed) {
-			this.dragonSound()
-		} else {
-			this.streakSound()
-		}
+    			habit['completed'] = true
+    		}
+    		if(habit.streak_count >= 21) habit['power_streak'] = true
+    		if(habit.completed) {
+    			this.dragonSound()
+    		} else {
+    			this.streakSound()
+    		}
         this.setState({habit})
         editHabit(user_id, id, this.state.form)
     }
 
+    resetStreak = (e) =>{
+      e.preventDefault()
+      let habit= this.state.form.habit
+      let {user_id,id} = this.props.props.params
+      habit['streak_count'] = 0
+      habit['completed'] = false
+      habit['power_streak'] = false
+      this.setState({habit})
+      editHabit(user_id, id, this.state.form)
+    }
     componentDidMount() {
         let {user_id, id} = this.props.props.params
         console.log(user_id, id);
@@ -114,6 +124,7 @@ class HabitPage extends Component {
 	            {streakCounter}
 				{rewardIcon}
 	            <button onClick={this.addStreak}>click!</button>
+              <button onClick={this.resetStreak}>reset!</button>
 				Power Streak: {powerStreakCounter}
 				{powerRewardIcon}
             </LeavesBg>

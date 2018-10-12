@@ -19,3 +19,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+//probably should add the .env here, but I don't want to try to debug it right now
