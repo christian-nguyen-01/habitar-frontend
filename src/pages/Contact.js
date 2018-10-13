@@ -9,7 +9,9 @@ class Contact extends Component {
         return (
             <Bg>
 
-                <FuzionLogo/>
+				<a className="fuzionLogo" href="https://github.com/Habitar">
+				<FuzionLogo/>
+				</a>
                 <div className="box">
                   <div className="info">
                     <p>Mary</p>

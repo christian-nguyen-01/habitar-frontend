@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Bg} from '../theme/types'
 import '../css/About.css'
+import '../css/HabitPage.css'
 
 class About extends Component {
     render() {
@@ -12,25 +13,31 @@ class About extends Component {
                   <br/>
 
                   <section className="sectionContainer">
-                    <h3 className="cardTitle">What is a Habitar?</h3>
-                    <br/>
-                    <p>A habitar is a magical creature that is a cross between a dinosaur and a dragon</p>
-                    <br/>
-                    <p>...some say it is possible to hatch a unicorn!</p>
-                    <br/>
-                    <p>Habit + Avatar = Habitar!</p>
+					  <div>
+	                    <h3 className="cardTitle">What is a Habitar?</h3>
+	                    <br/>
+	                    <p>A habitar is a magical creature that is a cross between a dinosaur and a dragon</p>
+	                    <br/>
+	                    <p>...some say it is possible to hatch a unicorn!</p>
+	                    <br/>
+	                    <p>Habit + Avatar = Habitar!</p>
+					</div>
+					<div className="img-container">
+						<img className="about-image" id="egg-image" src="/eggs/egg4.png"/>
+					</div>
                   </section>
 
                   <section className="sectionContainer">
-                    <h3 className="cardTitle">Our why:</h3>
-                    <br/>
-                    <p>
-                      Our team wanted to build a tool to help parents, teachers, and other people instill good habits for children, so we created Habitar!
-                    </p>
-                    <br/>
-                    <p>
+				  	<div>
+	                    <h3 className="cardTitle">Our why:</h3>
+	                    <br/>
+	                    <p>
+							Our team wanted to build a tool to help parents, teachers, and other people instill good habits for children, so we created Habitar!
+							<br/><br/>
+						    Studies show that routines and habits in children, including household chores and responsibilities, are unlikely to vary after the age of 9. Habitar provides a fun interactive atmosphere to help develop consistency in their daily routines and makes it easy to track a child&rsquo;s progress.
+	                    </p>
+					</div>
 
-                    </p>
                   </section>
 
                   <section className="sectionContainer">
