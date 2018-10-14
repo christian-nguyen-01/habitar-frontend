@@ -51,8 +51,8 @@ class About extends Component {
 
 				  <section className="sectionContainer">
 					  <div className="bolt-container">
-						  <i style={{color:"gold"}} className="fas fa-bolt" id="bolt"></i>
-						  <i style={{color:"#4ddbff"}} className="fas fa-bolt" id="bolt"></i>
+						  <i style={{color:"gold"}} className="fas fa-bolt about-image" id="bolt"></i>
+						  <i style={{color:"#4ddbff"}} className="fas fa-bolt about-image" id="bolt"></i>
 					  </div>
 
 					  <div>
