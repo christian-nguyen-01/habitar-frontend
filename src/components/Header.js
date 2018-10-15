@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AuthService from '../services/AuthService'
 import { NavContainer, NavItem, SmallLogo } from './Header.style'
+import Sound from './Sound'
 
 class Header extends Component {
 
@@ -67,6 +68,7 @@ class Header extends Component {
 				<NavItem to={path}>
 					{text}
 				</NavItem>
+				<Sound />
 				{logo}
             </NavContainer>
         )
