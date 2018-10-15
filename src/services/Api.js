@@ -45,7 +45,7 @@ let editHabit = function(userId, habitId, habit) {
 }
 
 let postHabit = function(habit) {
-  let address = BASE +'/users/'+ habit.habit.user_id+'/habits.json'
+  let address = BASE +'/users/'+ habit.habit.user_id+'/habits'
   return fetch(address, {
     method: 'POST',
     headers: {
