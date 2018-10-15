@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LeavesBg, Bg, A } from '../theme/types'
+import { LeavesBg, A } from '../theme/types'
 import { HabitarLogo, LinkContainer, LandingLine } from './LandingPage.style'
 
 class LandingPage extends Component {

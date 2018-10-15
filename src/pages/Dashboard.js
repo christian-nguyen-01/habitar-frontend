@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import withAuth from '../services/withAuth'
 import AuthService from '../services/AuthService'
 import {getUser, getHabits} from '../services/Api'

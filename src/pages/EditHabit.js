@@ -98,14 +98,47 @@ class CreateHabit extends Component {
         name="opt_in"
         value={opt_in}
         onClick={this.handleCheck}
-        />
+      />
+
+	// let habitarChoice = habitar === habitar ?
+	//   <input
+  	//    className="radioEggImagesButtons"
+  	//    id={`habitar{habitar}`}
+  	//    type="radio"
+  	//    name="habitar"
+  	//    value={habitar}
+  	//    checked={habitar === "1"}
+  	//    onChange={this.handleChange}
+	//    checked/>
+  	//    <label
+  	// 	 className=""
+  	// 	 htmlFor="habitar1"
+  	//    >
+  	// 	 <img className="radioEggImages"src="/eggs/egg1.png" alt="Habitar Egg 1"/>
+  	//    </label>
+	// :
+	// <input
+	//    className="radioEggImagesButtons"
+	//    id={`habitar{habitar}`}
+	//    type="radio"
+	//    name="habitar"
+	//    value={habitar}
+	//    checked={habitar === "1"}
+	//    onChange={this.handleChange}
+	//    />
+	//    <label
+	// 	 className=""
+	// 	 htmlFor="habitar1"
+	//    >
+	// 	 <img className="radioEggImages"src="/eggs/egg1.png" alt="Habitar Egg 1"/>
+	//    </label>
 
     return( // TODO: revert classnames
       <Bg>
 		  <div className="form-container">
 	        <h1>Edit Habit</h1>
 	        <div className="card">
-	          <form onSubmit={this.onSubmit} className="createForm">
+	          <form onSubmit={this.onSubmit} className="createForm" id="create-habit">
 
 	          <label>Child Name:</label>
 	            <input
@@ -169,7 +202,8 @@ class CreateHabit extends Component {
 	 					  id="habitar1"
 	 					  type="radio"
 	 					  name="habitar"
-	 					  value="1"
+						  value="1"
+	 					  checked={habitar === "1"}
 	 					  onChange={this.handleChange}
 	 					  />
 	 					  <label
@@ -184,7 +218,8 @@ class CreateHabit extends Component {
 	 					   id="habitar2"
 	 					   type="radio"
 	 					   name="habitar"
-	 					   value="2"
+						   value="2"
+	 					   checked={habitar === "2"}
 	 					   onChange={this.handleChange}
 	 					   />
 	 					   <label
@@ -199,7 +234,8 @@ class CreateHabit extends Component {
 	 						id="habitar3"
 	 						type="radio"
 	 						name="habitar"
-	 						value="3"
+							value="3"
+	 						checked={habitar === "3"}
 	 						onChange={this.handleChange}
 	 						/>
 	 						<label
@@ -214,7 +250,8 @@ class CreateHabit extends Component {
 	 						 id="habitar4"
 	 						 type="radio"
 	 						 name="habitar"
-	 						 value="4"
+							 value="4"
+	 						 checked={habitar === "4"}
 	 						 onChange={this.handleChange}
 	 						 />
 	 						 <label
@@ -229,7 +266,8 @@ class CreateHabit extends Component {
 	 						  id="habitar5"
 	 						  type="radio"
 	 						  name="habitar"
-	 						  value="5"
+							  value="5"
+	 						  checked={habitar === "5"}
 	 						  onChange={this.handleChange}
 	 						  />
 	 						  <label
@@ -262,7 +300,7 @@ class CreateHabit extends Component {
 	            value={reminder_time} onChange={this.handleChange}
 	            />
 
-	          <button className="form-submit" type="submit" onClick={this.onSumbit}>Edit Habit</button>
+	          <button className="form-submit" type="submit" onClick={this.onSumbit}>Update habit</button>
 
 	        </form>
 

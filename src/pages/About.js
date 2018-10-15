@@ -66,7 +66,7 @@ class About extends Component {
 						<br/>
 	                    <p>Define what the habit is and what the child will earn if they complete a 7 day streak. You can also set an even bigger reward for a 21 day "power streak"!</p>
 	                    <br/>
-						<p>The idea is to get kids excited about being diligent in their day to day activities.</p>
+						<p>The idea is to get kids excited about being diligent in their daily activities.</p>
 	                    <p>We hope your child will be excited to see their progress, watch their habitars hatch, and look forward to their hard-earned rewards!</p>
 					</div>
                   </section>

@@ -14,7 +14,7 @@ delete = (e)=>{
   render() {
 
     let { habit } = this.props
-    let { habit_name, child, streak_count, completed, reminder_time, power_streak } = habit
+    let { habit_name, child, streak_count, completed, reminder_time } = habit
 	let power_count = Math.floor(streak_count/7)
     let timebounds = /T(.*):00.000Z/ //regex to strip out the date and seconds
     let time = reminder_time.match(timebounds)[1] // time is now in simpler format ex: "08:30"

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import withAuth from '../services/withAuth'
 import {editHabit, getHabit} from '../services/Api'
-import {Redirect} from 'react-router-dom'
 import {LeavesBg} from '../theme/types'
 import '../css/HabitPage.css'
 
@@ -32,7 +31,7 @@ class HabitPage extends Component {
 	}
 
 	dragonSound = () => {
-		let {completed, habitar} = this.state.form.habit
+		let {habitar} = this.state.form.habit
 		let habitarSound = '/sounds/sound' + habitar + '.wav'
 		new Audio(habitarSound).play()
 	}
@@ -86,7 +85,6 @@ class HabitPage extends Component {
 
         let {habit_name, child, streak_count, habitar, reward, completed, habit_description, power_streak, power_reward} = this.state.form.habit
 
-        let {user_id, id} = this.props.props.params
         let streakCounter = []
 		let powerStreakCounter = []
 		let locked = <i style={{color:'lightgrey'}} class="fas fa-lock"></i>
@@ -133,34 +131,43 @@ class HabitPage extends Component {
 
 				<div className="main-container">
 
-					<div className="habit-info-container">
+					<div className="habit-info-container" id="streak-container">
 						<ul className="streakCount">
 							<li>
 								7 Day Streak:
-								<div>{streakCounter} {rewardIcon}</div>
+								<div>{streakCounter}<p>{reward} {rewardIcon}</p></div>
 							</li>
 							<li>
 								Power Streak:
-								<div>{powerStreakCounter} {powerRewardIcon}</div>
+								<div>{powerStreakCounter}<p>{power_reward} {powerRewardIcon}</p></div>
 							</li>
 						</ul>
 					</div>
 
 					<div className="button-container">
-						<div className="streak-button" onClick={this.addStreak}>Completed Today?
-						</div>
-						<div className="reset-button" onClick={this.resetStreak}>Reset
-						</div>
+						<ul className="buttons">
+							<li>
+								Completed Today?
+								<div className="streak-button" onClick={this.addStreak}>
+									<p id="appear-on-hover">Click if completed!</p>
+									<i style={{color:"gold"}} className="fas fa-bolt about-image" id="bolt"></i>
+								</div>
+							</li>
+							<li>
+								<div className="reset-button" onClick={this.resetStreak}>Reset
+								</div>
+							</li>
+						</ul>
 					</div>
 
 					<div className="habit-info-container">
 						<ul className="habitarInfo">
 							<li className="habitKey">Habit:
-								<span className="habitValue">{habit_name}</span>
+								<span className="habitValue"><p>{habit_name}</p></span>
 							</li>
 
 							<li className="habitKey">Description:
-							<span className="habitValue">{habit_description}</span>
+							<span className="habitValue"><p>{habit_description}</p></span>
 							</li>
 						</ul>
 					</div>

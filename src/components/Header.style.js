@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Flex, Div } from '../theme/grid'
+import { Flex } from '../theme/grid'
 import { Img } from '../theme/types'
 import media from '../theme/media'
 
