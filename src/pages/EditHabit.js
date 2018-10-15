@@ -100,39 +100,6 @@ class CreateHabit extends Component {
         onClick={this.handleCheck}
       />
 
-	// let habitarChoice = habitar === habitar ?
-	//   <input
-  	//    className="radioEggImagesButtons"
-  	//    id={`habitar{habitar}`}
-  	//    type="radio"
-  	//    name="habitar"
-  	//    value={habitar}
-  	//    checked={habitar === "1"}
-  	//    onChange={this.handleChange}
-	//    checked/>
-  	//    <label
-  	// 	 className=""
-  	// 	 htmlFor="habitar1"
-  	//    >
-  	// 	 <img className="radioEggImages"src="/eggs/egg1.png" alt="Habitar Egg 1"/>
-  	//    </label>
-	// :
-	// <input
-	//    className="radioEggImagesButtons"
-	//    id={`habitar{habitar}`}
-	//    type="radio"
-	//    name="habitar"
-	//    value={habitar}
-	//    checked={habitar === "1"}
-	//    onChange={this.handleChange}
-	//    />
-	//    <label
-	// 	 className=""
-	// 	 htmlFor="habitar1"
-	//    >
-	// 	 <img className="radioEggImages"src="/eggs/egg1.png" alt="Habitar Egg 1"/>
-	//    </label>
-
     return( // TODO: revert classnames
       <Bg>
 		  <div className="form-container">
