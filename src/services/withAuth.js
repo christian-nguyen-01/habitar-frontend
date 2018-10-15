@@ -32,7 +32,7 @@ export default function withAuth(WrappedComponent) {
     }
 
     render() {
-        console.log(this.props);
+      console.log(this.props);
       if (this.state.userId) {
         return (
             <WrappedComponent history={this.props.history} userId={this.state.userId} props={this.props}/>

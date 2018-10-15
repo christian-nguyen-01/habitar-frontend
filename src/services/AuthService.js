@@ -2,12 +2,13 @@ import decode from 'jwt-decode'
 
 class AuthService {
 	constructor(domain) {
-		this.domain = domain || 'https://habitar-backend.herokuapp.com'
+		this.domain = domain || process.env.REACT_APP_API_HOST
 	}
 
 	login = (user) => {
-		console.log({user: user});
+		console.log("starting loging request with", {user: user});
 		// console.log("Starting Login Request", email, password);
+		console.log("sending request to",this.domain);
 		return this.authFetch(`${this.domain}/users/sign_in`, {
 			method: "POST",
 			body: JSON.stringify({user: user}),

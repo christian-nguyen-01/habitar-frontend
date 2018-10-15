@@ -1,4 +1,4 @@
-const BASE = 'https://habitar-backend.herokuapp.com'
+const BASE = process.env.REACT_APP_API_HOST
 
 let getUser = function(id) {
     return fetch(BASE + '/users/' + id)
@@ -17,13 +17,14 @@ let getHabits = function(userId) {
 }
 
 let getHabit = function(userId, habitId) {
+	console.log(userId, habitId);
   return fetch(BASE + '/users/' + userId + '/habits/' + habitId)
   .then((res) => {
     let json = res.json()
     return json
   })
   .then((res)=>{
-    console.log(res)
+    // console.log(res)
     return res
     })
 }
@@ -64,8 +65,6 @@ let deleteHabit = function(userId, habitId){
         method: "DELETE"
     })
 }
-
-
 
 export {
     getUser, getHabits, postHabit,getHabit, editHabit, deleteHabit

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import AuthService from '../services/AuthService'
+import {Bg} from '../theme/types'
 
 class Login extends Component {
   constructor(){
@@ -49,10 +50,11 @@ class Login extends Component {
     let { email, password } = this.state.user
 
     return (
-      <div className="center">
+      <Bg>
+      <h1>Login</h1>
         <div className="card">
-          <h1>Login</h1>
           <form onSubmit = {this.onSubmit} className="loginForm">
+		    <label>Email</label>
             <input
               className="form-item"
               placeholder="Email"
@@ -62,6 +64,7 @@ class Login extends Component {
               onChange={this.onChange.bind(this)}
               value={email}
             />
+			<label>Password</label>
             <input
               className="form-item"
               placeholder="Password"
@@ -81,7 +84,7 @@ class Login extends Component {
           </form>
           {this.state.loginSuccess && <Redirect to="/dashboard" />}
         </div>
-      </div>
+      </Bg>
     );
   }
 }

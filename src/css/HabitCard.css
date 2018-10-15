@@ -1,0 +1,40 @@
+
+
+.habit-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 8px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  min-width: 80vw;
+}
+
+.habit-card a {
+	text-decoration: none;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: black;
+}
+
+a:hover {
+	color: #F7B733;
+}
+
+.habit-info {
+  display: flex;
+  justify-content: space-around;
+  padding-right: 10px;
+}
+
+.edit-delete {
+  justify-content: flex-end;
+  padding-top: 2px;
+}
+
+#streak {
+	color: #F7B733 !important;
+}
+
+#power {
+	color: #4ddbff !important;
+}
