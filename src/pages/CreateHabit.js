@@ -36,8 +36,8 @@ class CreateHabit extends Component {
     // console.log("HANDLECHANGE RUNNING:::");
     let {habit} = this.state.form
     habit[event.target.name] = event.target.value
-    // console.log(event.target.value);
-    // console.log(habit[event.target.name]);
+    console.log(event.target.value);
+    console.log(habit[event.target.name]);
     // console.log();
     this.setState({habit})
     // console.log(habit);
@@ -138,7 +138,7 @@ class CreateHabit extends Component {
 
 				<label>Choose your Habitar&#39;s egg:</label>
 				  <div className="form-item" id="radioEggImagesContainer">
-					<input
+					<span><input
 					   className="radioEggImagesButtons"
 					   id="habitar1"
 					   type="radio"
@@ -151,9 +151,9 @@ class CreateHabit extends Component {
 						 htmlFor="habitar1"
 					   >
 						 <img className="radioEggImages"src="/eggs/egg1.png" alt="Habitar Egg 1"/>
-					   </label>
+					   </label></span>
 
-					 <input
+					 <span><input
 						 className="radioEggImagesButtons"
 						id="habitar2"
 						type="radio"
@@ -166,9 +166,9 @@ class CreateHabit extends Component {
 						  htmlFor="habitar2"
 						>
 						  <img className="radioEggImages"src="/eggs/egg2.png" alt="Habitar Egg 2"/>
-						</label>
+						</label></span>
 
-					  <input
+					  <span><input
 						 className="radioEggImagesButtons"
 						 id="habitar3"
 						 type="radio"
@@ -181,9 +181,9 @@ class CreateHabit extends Component {
 						   htmlFor="habitar3"
 						 >
 						   <img className="radioEggImages"src="/eggs/egg3.png" alt="Habitar Egg 3"/>
-						 </label>
+						 </label></span>
 
-					   <input
+					   <span><input
 						   className="radioEggImagesButtons"
 						  id="habitar4"
 						  type="radio"
@@ -196,9 +196,9 @@ class CreateHabit extends Component {
 							htmlFor="habitar4"
 						  >
 							<img className="radioEggImages"src="/eggs/egg4.png" alt="Habitar Egg 4"/>
-						  </label>
+						  </label></span>
 
-						<input
+						<span><input
 						   className="radioEggImagesButtons"
 						   id="habitar5"
 						   type="radio"
@@ -211,7 +211,7 @@ class CreateHabit extends Component {
 							 htmlFor="habitar5"
 						   >
 							 <img className="radioEggImages"src="/eggs/egg5.png" alt="Habitar Egg 5"/>
-						   </label>
+						   </label></span>
 				   </div>
 
 	        <label>Opt in for text message reminders:</label>

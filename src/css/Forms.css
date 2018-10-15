@@ -80,8 +80,9 @@ h1 {
 }
 
 .radioEggImages{
-  max-width: 8%;
-  margin-left:2%;
+  max-width: 45%;
+	/* min-width: 8%; */
+  margin-left:3%;
   margin-right: 5%;
 }
 
@@ -97,6 +98,7 @@ h1 {
 }
 
 #radioEggImagesContainer{
+	display: flex;
   text-align: center;
   padding-bottom: 5%;
   padding-top: 5%;

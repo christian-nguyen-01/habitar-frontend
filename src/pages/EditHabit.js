@@ -34,6 +34,7 @@ class CreateHabit extends Component {
   handleChange=(event)=>{
     let {habit} = this.state.form
     habit[event.target.name] = event.target.value
+    console.log(event.target.name, event.target.value);
     this.setState({habit})
   }
 
@@ -78,6 +79,7 @@ class CreateHabit extends Component {
   }
 
   render(){
+    console.log(this.state.form);
 
 	let { habit_name, child, habitar, reward, habit_description, reminder_time, opt_in, phone, power_reward } = this.state.form.habit
 
@@ -170,7 +172,7 @@ class CreateHabit extends Component {
 	 					  type="radio"
 	 					  name="habitar"
 						  value="1"
-	 					  checked={habitar === "1"}
+	 					  checked={habitar == "1"}
 	 					  onChange={this.handleChange}
 	 					  />
 	 					  <label
@@ -186,7 +188,7 @@ class CreateHabit extends Component {
 	 					   type="radio"
 	 					   name="habitar"
 						   value="2"
-	 					   checked={habitar === "2"}
+	 					   checked={habitar == "2"}
 	 					   onChange={this.handleChange}
 	 					   />
 	 					   <label
@@ -202,7 +204,7 @@ class CreateHabit extends Component {
 	 						type="radio"
 	 						name="habitar"
 							value="3"
-	 						checked={habitar === "3"}
+	 						checked={habitar == "3"}
 	 						onChange={this.handleChange}
 	 						/>
 	 						<label
@@ -218,7 +220,7 @@ class CreateHabit extends Component {
 	 						 type="radio"
 	 						 name="habitar"
 							 value="4"
-	 						 checked={habitar === "4"}
+	 						 checked={habitar == "4"}
 	 						 onChange={this.handleChange}
 	 						 />
 	 						 <label
@@ -234,7 +236,7 @@ class CreateHabit extends Component {
 	 						  type="radio"
 	 						  name="habitar"
 							  value="5"
-	 						  checked={habitar === "5"}
+	 						  checked={habitar == "5"}
 	 						  onChange={this.handleChange}
 	 						  />
 	 						  <label
