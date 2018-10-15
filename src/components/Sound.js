@@ -23,9 +23,9 @@ class Sound extends Component {
 
 		let sound =
 		this.state.playSound?
-			<a href="#" onClick={this.handleSound}><i style={{color:"hotpink"}} class="fas fa-volume-up"></i></a>
+			<a href="#" onClick={this.handleSound}><i style={{color:"hotpink", fontSize:"1.2em", paddingTop:"2px"}} class="fas fa-volume-up"></i></a>
 		:
-			<a href="#" onClick={this.handleSound}><i style={{color:"gold"}} class="fas fa-volume-off"></i></a>
+			<a href="#" onClick={this.handleSound}><i style={{color:"gold", fontSize:"1.2em", paddingTop:"2px"}} class="fas fa-volume-off"></i></a>
 
 		return(
 			<div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AuthService from '../services/AuthService'
-import { NavContainer, NavItem, SmallLogo } from './Header.style'
+import { NavContainer, NavItem, NavLink, SoundWrapper, SmallLogo } from './Header.style'
 import Sound from './Sound'
 
 class Header extends Component {
@@ -27,19 +27,19 @@ class Header extends Component {
 		if(this.auth.loggedIn()) {
 			register = ""
 		} else {
-			register = <NavItem to="/register">
+			register = <NavLink to="/register">
 				REGISTER
-			</NavItem>
+			</NavLink>
 		}
 
 		if(this.auth.loggedIn()) {
-			login = <NavItem to="/" onClick={this.handleLogout}>
+			login = <NavLink to="/" onClick={this.handleLogout}>
 				LOGOUT
-			</NavItem>
+			</NavLink>
 		} else {
-			login = <NavItem to="/login">
+			login = <NavLink to="/login">
 				LOGIN
-			</NavItem>
+			</NavLink>
 		}
 
 		if(this.auth.loggedIn()) {
@@ -49,27 +49,28 @@ class Header extends Component {
 		} else {
 			path = "/register"
 			text = ""
-			logo = <a href="/login"><SmallLogo width="50px" /></a>
+			logo = <a href="/"><SmallLogo width="50px" /></a>
 		}
 
         return (
             <NavContainer>
-                <NavItem to="/">
-					HOME
+				<NavItem>
+					{logo}
 				</NavItem>
-				<NavItem to="/about">
+				<NavLink to="/about">
 					ABOUT
-				</NavItem>
-				<NavItem to="/contact">
+				</NavLink>
+				<NavLink to="/contact">
 					CONTACT
-				</NavItem>
+				</NavLink>
 				{register}
 				{login}
-				<NavItem to={path}>
+				<NavLink to={path}>
 					{text}
-				</NavItem>
-				<Sound />
-				{logo}
+				</NavLink>
+				<SoundWrapper>
+					<Sound />
+				</SoundWrapper>
             </NavContainer>
         )
     }

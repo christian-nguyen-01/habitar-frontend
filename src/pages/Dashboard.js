@@ -58,8 +58,8 @@ class Dashboard extends Component{
                     )
                   })}
                 </div>
-                <div>
-                  <A2 to= {`/users/${id}/habits/`}>CREATE NEW HABIT</A2>
+                <div className="create-new">
+                  <a href={`/users/${id}/habits/`}>CREATE NEW HABIT</a>
                 </div>
             </Bg>
         )
