@@ -20,10 +20,10 @@ class Header extends Component {
 		let register
         let login
 		let text
-		let logo
 		let path
+		let logo = <a href="/"><SmallLogo width="50px" /></a>
 
-        // check if the user is logged in or not
+
 		if(this.auth.loggedIn()) {
 			register = ""
 		} else {
@@ -45,11 +45,9 @@ class Header extends Component {
 		if(this.auth.loggedIn()) {
 			path = "/dashboard"
 			text = "DASHBOARD"
-			logo = <a href="/dashboard"><SmallLogo width="50px" /></a>
 		} else {
 			path = "/register"
 			text = ""
-			logo = <a href="/"><SmallLogo width="50px" /></a>
 		}
 
         return (
