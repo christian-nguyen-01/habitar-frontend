@@ -45,7 +45,9 @@ let editHabit = function(userId, habitId, habit) {
 }
 
 let postHabit = function(habit) {
+  console.log("HABIT::: ", habit);
   let address = BASE +'/users/'+ habit.habit.user_id+'/habits'
+  console.log("ADDRESS::: ", address);
   return fetch(address, {
     method: 'POST',
     headers: {
@@ -54,6 +56,7 @@ let postHabit = function(habit) {
     body: JSON.stringify(habit)
   })
   .then((res) => {
+    console.log(res);
     let json = res.json()
     return json
   })
