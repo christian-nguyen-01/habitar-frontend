@@ -4,3 +4,24 @@
 	padding: 15px;
 	-webkit-text-stroke: 2px black;
 }
+
+.create-new {
+	padding-top: 15px;
+}
+
+.create-new a {
+	font-size: 2.5em;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
+	text-decoration: none;
+}
+
+.create-new a:hover {
+	color: #F7B733;
+}
+
+@media only screen and (max-width: 768px) {
+	.create-new {
+		font-size: .65em;
+	}
+}
