@@ -65,9 +65,11 @@ class CreateHabit extends Component {
     .then((res)=>{
         let {habit}=this.state.form
         Object.keys(habit).map((e)=>habit[e]=res[e])
-        var displaytime = new Date(habit.reminder_time)
-        console.log(habit.reminder_time,displaytime,displaytime.getHours(),displaytime.getMinutes());
-        let settime= `${(displaytime.getHours()>=10)?displaytime.getHours():("0"+displaytime.getHours())}:${(displaytime.getMinutes()>=10)?displaytime.getMinutes():("0"+displaytime.getMinutes())}`
+        const displaytime = new Date(habit.reminder_time)
+        let hours = displaytime.getHours()+displaytime.getTimezoneOffset()/60
+        // if(hours<0) hours+=24
+        console.log(habit.reminder_time,displaytime,hours,displaytime.getMinutes());
+        let settime= `${(hours>=10)?hours:("0"+hours)}:${(displaytime.getMinutes()>=10)?displaytime.getMinutes():("0"+displaytime.getMinutes())}`
         console.log(settime);
         habit['reminder_time']=settime
         // console.log(child);
@@ -170,7 +172,7 @@ class CreateHabit extends Component {
 	 					  type="radio"
 	 					  name="habitar"
 						  value="1"
-	 					  checked={habitar === "1"}
+	 					  checked={habitar == "1"}
 	 					  onChange={this.handleChange}
 	 					  />
 	 					  <label
@@ -186,7 +188,7 @@ class CreateHabit extends Component {
 	 					   type="radio"
 	 					   name="habitar"
 						   value="2"
-	 					   checked={habitar === "2"}
+	 					   checked={habitar == "2"}
 	 					   onChange={this.handleChange}
 	 					   />
 	 					   <label
@@ -202,7 +204,7 @@ class CreateHabit extends Component {
 	 						type="radio"
 	 						name="habitar"
 							value="3"
-	 						checked={habitar === "3"}
+	 						checked={habitar == "3"}
 	 						onChange={this.handleChange}
 	 						/>
 	 						<label
@@ -218,7 +220,7 @@ class CreateHabit extends Component {
 	 						 type="radio"
 	 						 name="habitar"
 							 value="4"
-	 						 checked={habitar === "4"}
+	 						 checked={habitar == "4"}
 	 						 onChange={this.handleChange}
 	 						 />
 	 						 <label
@@ -234,7 +236,7 @@ class CreateHabit extends Component {
 	 						  type="radio"
 	 						  name="habitar"
 							  value="5"
-	 						  checked={habitar === "5"}
+	 						  checked={habitar == "5"}
 	 						  onChange={this.handleChange}
 	 						  />
 	 						  <label
